@@ -17,7 +17,3 @@ export const Frame = styled.div`
     background-color: rgb(0 0 0 / 1);
     }
 `;
-
-export const Content = styled.div`
-
-`;

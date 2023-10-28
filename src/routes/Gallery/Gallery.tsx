@@ -4,6 +4,7 @@ import { Technologies } from './Technologies/Technologies';
 import * as S from "./Gallery.styles";
 import MyPhoto from '../../assets/images/my_photo.png';
 import FrontEnd from '../../assets/images/frontend.gif';
+import { Experience } from './Experience/Experience';
 
 export const Gallery = () => {
     const [experienceYears, setExperienceYears] = useState(0);
@@ -44,7 +45,15 @@ export const Gallery = () => {
                 let frame = frames[i],
                     transform = `translateZ(${zVals[i]}px)`,
                     opacity = zVals[i] < Math.abs(zSpacing) / 1.8 ? 1 : 0
-                frame.setAttribute('style', `transform: ${transform}; opacity: ${opacity}`)
+                if (frame instanceof HTMLElement) {
+                        frame.style.cssText = `transform: ${transform}; opacity: ${opacity};`;
+        
+                        if (opacity === 0) {
+                            frame.style.pointerEvents = 'none';
+                        } else {
+                            frame.style.pointerEvents = 'auto';
+                        }
+                    }
             });
         };
 
@@ -64,7 +73,7 @@ export const Gallery = () => {
                     <S.ImageRight src={FrontEnd}/>
                 </Frame>
                 <Frame>
-                    <S.Text>
+                    <S.TextRight>
                         <S.H3>Professional summary</S.H3>
                         <S.P>
                             I am a Front-end developer with <S.Square>{experienceYears}</S.Square> year(s) 
@@ -75,10 +84,24 @@ export const Gallery = () => {
                             determined, highly reliable individual with exceptional creativity, problem solving and 
                             interpersonal skills
                         </S.P>
-                    </S.Text>
+                    </S.TextRight>
                 </Frame>
                 <Frame>
                     <Technologies />
+                </Frame>
+                <Frame>
+                    <S.TextLeft>
+                        <S.H3>Frontend Development Experience</S.H3>
+                        <S.P>
+                            Here are some of the key projects I have worked on as a frontend developer. 
+                            Each project represents the result of my efforts in creating user interfaces 
+                            that are both user-friendly and functionally robust, utilizing modern technologies 
+                            and best practices in frontend development
+                        </S.P>
+                    </S.TextLeft>
+                </Frame>
+                <Frame>
+                    <Experience />
                 </Frame>
             </S.Gallery>
         </S.Container>

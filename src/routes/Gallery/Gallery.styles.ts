@@ -50,9 +50,14 @@ export const ImageRight = styled.img`
     border: 1px solid white;
 `;
 
-export const Text = styled.div`
+export const TextRight = styled.div`
     width: 95vh;
     margin-left: 100vh;
+`;
+
+export const TextLeft = styled.div`
+    width: 90vh;
+    margin-right: 80vh;
 `;
 
 export const Square = styled.div`

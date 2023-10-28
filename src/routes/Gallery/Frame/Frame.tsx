@@ -4,9 +4,7 @@ import * as S from "./Frame.styles";
 export const Frame = ({ children }: IFrameProps) => {
     return (
         <S.Frame className="frame">
-            <S.Content>
-                {children}
-            </S.Content>
+            {children}
         </S.Frame>
     );
 };

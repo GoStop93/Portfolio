@@ -1,4 +1,10 @@
 import { styled } from "styled-components";
+export const Text = styled.div`
+    font-size: 3vh;
+    font-weight: 600;
+    color: white;
+    margin-right: 2vh;
+`;
 
 export const Technology = styled.div`
     display: flex;
@@ -16,9 +22,3 @@ export const Icon = styled.img`
     margin-left: 2vh;
 `;
 
-export const Text = styled.div`
-    font-size: 3vh;
-    font-weight: 600;
-    color: white;
-    margin-right: 2vh;
-`;

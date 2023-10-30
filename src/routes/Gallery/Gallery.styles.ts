@@ -1,5 +1,32 @@
 import styled from "styled-components";
 
+export const Button = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
+    width: 20vh;
+    height: 4vh;
+    font-size: 2.1vh;
+    line-height: 2.1vh;
+    background-color: #5733A8;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0  rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    gap: 1vh;
+    &:hover {
+        cursor: pointer;
+        background-color: #5733A8;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#5733A8), to(#804FF6));
+        background-image: linear-gradient(#5733A8, #804FF6);
+    };
+`;
+
+export const Wraper = styled.div`
+    height: 2200px;;
+`;
+
 export const Container = styled.div`
     width: 100%;
     height: 100%;
@@ -50,6 +77,13 @@ export const ImageRight = styled.img`
     border: 1px solid white;
 `;
 
+export const Text = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vh;
+`;
+
 export const TextRight = styled.div`
     width: 95vh;
     margin-left: 100vh;
@@ -61,14 +95,18 @@ export const TextLeft = styled.div`
 `;
 
 export const Square = styled.div`
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 2vh;
-  height: 2vh;
-  padding: 10px;
-  background-color: transparent; 
-  border: 1px solid #fff;
-  border-radius: 5px;
-  margin: 0 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2vh;
+    height: 2vh;
+    padding: 10px;
+    background-color: transparent; 
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin: 0 5px;
+`;
+
+export const ButtonIcon = styled.img`
+    height: 3vh;
 `;

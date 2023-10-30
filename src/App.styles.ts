@@ -4,7 +4,7 @@ export const App = styled.div`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 4000px;
+    height: 100%;
     width: 100%;
     background-color: black;
     color: white;

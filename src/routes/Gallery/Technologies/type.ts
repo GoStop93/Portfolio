@@ -9,45 +9,45 @@ import GitIcon from '../../../assets/icons/git.png';
 import JiraIcon from '../../../assets/icons/jira.png';
 
 export interface ITechnologyProps {
-    icon: string,
-    text: string,
+  icon: string;
+  text: string;
 }
 
-export const TechnologiesInformation : ITechnologyProps[] = [
-    {
-        icon: JSIcon,
-        text: 'JavaScript'
-    },
-    {
-        icon: ReactIcon,
-        text: 'React'
-    },
-    {
-        icon: HTMLIcon,
-        text: 'HTML'
-    },
-    {
-        icon: CSSIcon,
-        text: 'CSS'
-    },
-    {
-        icon: TSIcon,
-        text: 'TypeScript'
-    },
-    {
-        icon: NextJSIcon,
-        text: 'Next.js'
-    },
-    {
-        icon: JestIcon,
-        text: 'Jest'
-    },
-    {
-        icon: GitIcon,
-        text: 'Git'
-    },
-    {
-        icon: JiraIcon,
-        text: 'Jira'
-    },
+export const TechnologiesInformation: ITechnologyProps[] = [
+  {
+    icon: JSIcon,
+    text: 'JavaScript',
+  },
+  {
+    icon: ReactIcon,
+    text: 'React',
+  },
+  {
+    icon: HTMLIcon,
+    text: 'HTML',
+  },
+  {
+    icon: CSSIcon,
+    text: 'CSS',
+  },
+  {
+    icon: TSIcon,
+    text: 'TypeScript',
+  },
+  {
+    icon: NextJSIcon,
+    text: 'Next.js',
+  },
+  {
+    icon: JestIcon,
+    text: 'Jest',
+  },
+  {
+    icon: GitIcon,
+    text: 'Git',
+  },
+  {
+    icon: JiraIcon,
+    text: 'Jira',
+  },
 ];

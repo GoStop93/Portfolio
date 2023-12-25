@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export interface IFrameProps {
-    children?: ReactNode | string;
+  children?: ReactNode | string;
 }

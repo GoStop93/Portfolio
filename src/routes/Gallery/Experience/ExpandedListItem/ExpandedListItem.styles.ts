@@ -13,7 +13,7 @@ export const fadeIn = keyframes`
 
 export const ExpandedListItemWrapper = styled.div`
   cursor: pointer;
-  background-color: #5733A8;
+  background-color: #5733a8;
   border: 2px solid white;
   width: 100vh;
 `;
@@ -25,13 +25,12 @@ export const ExpandedListItemContent = styled.div`
   align-items: center;
 `;
 
-
 export const AvatarExpanded = styled(Avatar)<{ image: any }>`
   width: 10vh;
   height: 10vh;
   margin-right: 0;
   margin-bottom: 0.5vh;
-  background-image: url(${props => props.image});
+  background-image: url(${(props) => props.image});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -65,7 +64,7 @@ export const AdditionalContentItem = styled.div`
   animation: ${fadeIn} 1.2s ease forwards;
   opacity: 0;
   border-radius: 1vh;
-  background-color: #7F4EFB;
+  background-color: #7f4efb;
   color: white;
   border: 2px solid white;
   padding: 1vh;
@@ -95,4 +94,3 @@ export const AdditionalContentText = styled.div`
 export const UL = styled.ul`
   font-size: 1.4vh;
 `;
-

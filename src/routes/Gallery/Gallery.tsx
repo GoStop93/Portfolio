@@ -12,6 +12,7 @@ import { Experience } from './Experience/Experience';
 export const Gallery = () => {
   const [experienceYears, setExperienceYears] = useState(0);
   const [experienceMonths, setExperienceMonths] = useState(0);
+  const [isExperienceVisible, setExperienceVisible] = useState(false);
 
   let navigate = useNavigate();
 
@@ -62,6 +63,13 @@ export const Gallery = () => {
           } else {
             frame.style.pointerEvents = 'auto';
           }
+
+          if (frame.classList.contains('experience') && opacity === 1 && zVals[i] > 0) {
+            setExperienceVisible(true);
+          }
+          if (!frame.classList.contains('experience') && opacity === 1 && zVals[i] > 0) {
+            setExperienceVisible(false);
+          }
         }
       });
     };
@@ -90,11 +98,11 @@ export const Gallery = () => {
             <S.TextRight>
               <S.H3>Professional summary</S.H3>
               <S.P>
-                I am a Front-end developer with <S.Square>{experienceYears}</S.Square> year(s) and <S.Square>{experienceMonths}</S.Square> month(s) of
-                software development experience, utilizing JavaScript as the main programming language and the React library. Eager to create
-                high-quality and efficient software solutions and deliver value to clients. A quick learner with attention to details and a
-                result-oriented mindset. Diligent, determined, highly reliable individual with exceptional creativity, problem solving and
-                interpersonal skills
+                I am a Front-end developer with <S.Square>{experienceYears}</S.Square> {experienceYears > 1 ? 'years' : 'year'} and{' '}
+                <S.Square>{experienceMonths}</S.Square> {experienceMonths > 1 || experienceMonths === 0 ? 'months' : 'month'} of software development
+                experience, utilizing JavaScript as the main programming language and the React library. Eager to create high-quality and efficient
+                software solutions and deliver value to clients. A quick learner with attention to details and a result-oriented mindset. Diligent,
+                determined, highly reliable individual with exceptional creativity, problem solving and interpersonal skills
               </S.P>
             </S.TextRight>
           </Frame>
@@ -111,8 +119,8 @@ export const Gallery = () => {
               </S.P>
             </S.TextLeft>
           </Frame>
-          <Frame>
-            <Experience />
+          <Frame name="experience">
+            <Experience isExperienceVisible={isExperienceVisible}/>
           </Frame>
           <Frame>
             <S.Text>

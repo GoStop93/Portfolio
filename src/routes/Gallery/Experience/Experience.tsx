@@ -1,16 +1,23 @@
 import { Flipper } from 'react-flip-toolkit';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ListItem } from './ListItem/ListItem';
 import { ExpandedListItem } from './ExpandedListItem/ExpandedListItem';
 import { ExperienceData } from './type';
 import * as S from './Experience.styles';
+import { IExperienceProps } from './type';
 
-export const Experience = () => {
+export const Experience = ({ isExperienceVisible }: IExperienceProps) => {
   const [focused, setFocused] = useState(null);
 
   const onClick = (index: any) => {
     setFocused((prev: any) => (prev === index ? null : index));
   };
+
+  useEffect(() => {
+    if (isExperienceVisible) {
+      setFocused(null);
+    }
+  }, [isExperienceVisible]);
 
   const listData = ExperienceData;
 

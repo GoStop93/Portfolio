@@ -16,10 +16,26 @@ export const ExpandedListItemWrapper = styled.div`
   background-color: #5733a8;
   border: 2px solid white;
   width: 100vh;
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 6px;
+    background-color: rgb(80, 20, 110);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: rgb(157, 78, 251);
+  }
 `;
 
 export const ExpandedListItemContent = styled.div`
-  padding: 1vh;
+  padding: 3vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +45,7 @@ export const AvatarExpanded = styled(Avatar)<{ image: any }>`
   width: 10vh;
   height: 10vh;
   margin-right: 0;
-  margin-bottom: 0.5vh;
+  margin: 2vh;
   background-image: url(${(props) => props.image});
   background-size: cover;
   background-repeat: no-repeat;
@@ -44,8 +60,8 @@ export const Description = styled.div`
 `;
 
 export const DescriptionItem = styled.div`
-  font-size: 2.1vh;
-  line-height: 1.4vh;
+  font-size: 3vh;
+  line-height: 2vh;
   color: white;
 
   & + & {
@@ -55,7 +71,7 @@ export const DescriptionItem = styled.div`
 
 export const AdditionalContent = styled.div`
   width: 100%;
-  margin-top: 2.1vh;
+  margin-top: 3.5vh;
 `;
 
 export const AdditionalContentItem = styled.div`
@@ -83,14 +99,15 @@ export const AdditionalContentItem = styled.div`
 `;
 
 export const AdditionalContentTitle = styled.div`
-  font-size: 1.4vh;
+  font-size: 2.2vh;
+  font-weight: 600;
 `;
 
 export const AdditionalContentText = styled.div`
-  font-size: 1.4vh;
-  line-height: 2vh;
+  font-size: 2vh;
+  line-height: 2.5vh;
 `;
 
 export const UL = styled.ul`
-  font-size: 1.4vh;
+  font-size: 2vh;
 `;

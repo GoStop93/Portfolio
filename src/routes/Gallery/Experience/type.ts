@@ -9,12 +9,16 @@ interface InfoType {
 }
 
 export interface IExperienceProps {
+  isExperienceVisible: boolean;
+}
+
+export interface IExperienceEntity {
   image: string;
   text: string[];
   info: InfoType;
 }
 
-export const ExperienceData: IExperienceProps[] = [
+export const ExperienceData: IExperienceEntity[] = [
   {
     text: ['Xwork', 'Duration: 06.2023 – till now'],
     image: XworkImage,

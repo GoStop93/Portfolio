@@ -21,9 +21,9 @@ export const ListItemWrapper = styled.div`
   border: 2px solid white;
   transition: border 0.2s;
   &:hover {
-    border: 2px solid #ffc3e1;
+    border: 2px solid rgb(80, 20, 110);
     ${Avatar} {
-      border-color: #ffc3e1;
+      border-color: rgb(80, 20, 110);
     }
   }
 `;

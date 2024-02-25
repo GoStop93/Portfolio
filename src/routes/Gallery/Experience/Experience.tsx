@@ -7,10 +7,10 @@ import * as S from './Experience.styles';
 import { IExperienceProps } from './type';
 
 export const Experience = ({ isExperienceVisible }: IExperienceProps) => {
-  const [focused, setFocused] = useState(null);
+  const [focused, setFocused] = useState<number | null>(null);
 
-  const onClick = (index: any) => {
-    setFocused((prev: any) => (prev === index ? null : index));
+  const handleOpen = (index: number) => {
+    setFocused((prev: number | null) => (prev === index ? null : index));
   };
 
   useEffect(() => {
@@ -38,9 +38,9 @@ export const Experience = ({ isExperienceVisible }: IExperienceProps) => {
           {listData.map((item, index) => (
             <S.Item key={index}>
               {index === focused ? (
-                <ExpandedListItem index={focused} onClick={onClick} image={item.image} text={item.text} info={item.info} />
+                <ExpandedListItem index={focused} onClick={handleOpen} image={item.image} text={item.text} info={item.info} />
               ) : (
-                <ListItem index={index} onClick={onClick} image={item.image} text={item.text} />
+                <ListItem index={index} onClick={handleOpen} image={item.image} text={item.text} />
               )}
             </S.Item>
           ))}

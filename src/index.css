@@ -1,36 +1,44 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 html {
-  scrollbar-width: none; 
+  scrollbar-width: none;
 }
 
 body {
-	scrollbar-width: none; 
+  scrollbar-width: none;
 }
-body::-webkit-scrollbar { 
-	display: none; 
+body::-webkit-scrollbar {
+  display: none;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 @font-face {
-	font-family: raleway_c;
-	src: url(./fonts/raleway-v22-cyrillic-300.woff2);
-	font-weight: 300;
+  font-family: raleway_c;
+  src: url(./fonts/raleway-v22-cyrillic-300.woff2);
+  font-weight: 300;
 }
 
 @font-face {
-	font-family: raleway_c;
-	src: url(./fonts/raleway-v22-cyrillic-100.woff2);
-	font-weight: 100;
+  font-family: raleway_c;
+  src: url(./fonts/raleway-v22-cyrillic-100.woff2);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: raleway_project;
+  src: url(./fonts/raleway-regular.woff2);
+}
+
+@font-face {
+  font-family: outfit_c;
+  src: url(./fonts/outfit-regular.woff2);
 }

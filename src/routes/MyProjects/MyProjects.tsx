@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import * as S from './MyProjects.styles';
 import heros from '../../assets/images/heros.jpg';
 import { Project } from './Project/Project';
@@ -6,10 +7,16 @@ import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import BackIcon from '../../assets/icons/backArrow.png';
+import BackIcon from '../../assets/icons/arrowBack.png';
 
 export const MyProjects = () => {
   const [offset, setOffset] = useState(0);
+
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate('/')
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -88,6 +95,10 @@ export const MyProjects = () => {
   return (
     <S.ProjectsPage>
       <S.ProjectsHeader className="hero">
+        <S.BackButton onClick={handleBackClick}>
+          <S.BackButtonImage src={BackIcon}/>
+          <S.BackButtonText>Go back</S.BackButtonText>
+        </S.BackButton>
         <S.HeroImage src={heros} offset={offset}/>
         <S.MainTitle> <span>Gallery of</span> <span>my</span> <br/> <span>best</span> <span>pet</span> <span>projects</span></S.MainTitle>
       </S.ProjectsHeader>

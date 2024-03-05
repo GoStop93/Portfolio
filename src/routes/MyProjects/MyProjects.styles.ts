@@ -90,3 +90,31 @@ export const TextBlock = styled.div`
   max-width: 40vw;
   font-size: 4vw;
 `;
+
+export const BackButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2vh;
+  background-color: transparent;
+  border: none;
+  &:hover{
+    cursor: pointer;
+  }
+`;
+
+export const BackButtonText = styled.div`
+  font-size: 1.2vw;
+  margin-top: 3px;
+  color: #fafafa;
+`;
+
+export const BackButtonImage = styled.img`
+  width: 1.3vw;
+  margin-left: 1vh;
+  transition: all 0.5s;
+  transform: rotate(-90deg);
+  ${BackButton}:hover & {
+    transform: rotate(-90deg) translateY(-1vh);
+  }
+`;

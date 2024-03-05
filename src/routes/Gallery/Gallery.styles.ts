@@ -48,6 +48,11 @@ export const H2 = styled.h2`
   line-height: 1.3;
   width: min-content;
   margin-right: 50vh;
+  padding: 64px;
+  background: linear-gradient(to bottom right, hsl(0, 0%, 50%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 50%) 20%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
 `;
 
 export const H3 = styled.h3`

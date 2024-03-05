@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import BackIcon from '../../assets/icons/backArrow.png';
 
 export const MyProjects = () => {
   const [offset, setOffset] = useState(0);
@@ -88,7 +89,7 @@ export const MyProjects = () => {
     <S.ProjectsPage>
       <S.ProjectsHeader className="hero">
         <S.HeroImage src={heros} offset={offset}/>
-        <S.MainTitle>Gallery of my pet projects</S.MainTitle>
+        <S.MainTitle> <span>Gallery of</span> <span>my</span> <br/> <span>best</span> <span>pet</span> <span>projects</span></S.MainTitle>
       </S.ProjectsHeader>
       <S.Gallery>
         <S.GalleryLeftContent offset={offset}>

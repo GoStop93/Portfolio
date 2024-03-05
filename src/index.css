@@ -43,3 +43,28 @@ code {
   font-family: outfit_c;
   src: url(./fonts/outfit-regular.woff2);
 }
+
+
+/* @keyframes shine {
+  0% {
+    background-position: 0 0; 
+  }
+  60% {
+    background-position: 350px 500px; 
+  }
+  100% {
+    background-position: 350px 500px 
+  }
+} */
+
+@keyframes shine {
+  0% {
+    background-position: 0 0; 
+  }
+  60% {
+    background-position: 38vh 26vw; 
+  }
+  100% {
+    background-position: 38vh 26vw ;
+  }
+}

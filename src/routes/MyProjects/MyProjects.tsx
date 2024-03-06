@@ -9,7 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import BackIcon from '../../assets/icons/arrowBack.png';
 
-export const MyProjects = () => {
+const MyProjects = () => {
   const [offset, setOffset] = useState(0);
 
   const navigate = useNavigate();
@@ -64,7 +64,7 @@ export const MyProjects = () => {
           x: 0,
           scrollTrigger: {
             trigger: item,
-            end: '+=900vh',
+            end: '+=700vh',
 
             scrub: true,
           },
@@ -83,7 +83,7 @@ export const MyProjects = () => {
           x: 0,
           scrollTrigger: {
             trigger: item,
-            end: '+=900',
+            end: '+=700',
 
             scrub: true,
           },
@@ -118,3 +118,5 @@ export const MyProjects = () => {
     </S.ProjectsPage>
   );
 };
+
+export default MyProjects;

@@ -24,7 +24,11 @@ export const Button = styled.button`
 `;
 
 export const Wrapper = styled.div`
-  height: 2200px;
+   height: 2000px;
+
+  @media (width > 1536px) {
+    height: 2200px;
+  }
 `;
 
 export const Container = styled.div`

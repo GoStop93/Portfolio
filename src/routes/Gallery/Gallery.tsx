@@ -9,7 +9,7 @@ import FrontEnd from '../../assets/images/frontend.gif';
 import ProjectsIcon from '../../assets/icons/projects.png';
 import { Experience } from './Experience/Experience';
 
-export const Gallery = () => {
+const Gallery = () => {
   const [experienceYears, setExperienceYears] = useState(0);
   const [experienceMonths, setExperienceMonths] = useState(0);
   const [isExperienceVisible, setExperienceVisible] = useState(false);
@@ -43,7 +43,7 @@ export const Gallery = () => {
       frames = Array.from($frames),
       zVals: any[] = [];
 
-    window.onscroll = function () {
+    function handleScroll() {
       let top = document.documentElement.scrollTop,
         delta = lastPos - top;
 
@@ -72,9 +72,15 @@ export const Gallery = () => {
           }
         }
       });
-    };
+    }
+
+    window.addEventListener('scroll', handleScroll);
 
     window.scrollTo(0, 1);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
@@ -120,7 +126,7 @@ export const Gallery = () => {
             </S.TextLeft>
           </Frame>
           <Frame name="experience">
-            <Experience isExperienceVisible={isExperienceVisible}/>
+            <Experience isExperienceVisible={isExperienceVisible} />
           </Frame>
           <Frame>
             <S.Text>
@@ -140,3 +146,5 @@ export const Gallery = () => {
     </S.Wrapper>
   );
 };
+
+export default Gallery;

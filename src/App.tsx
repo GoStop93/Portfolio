@@ -6,6 +6,7 @@ import PageLoader from './components/PageLoader/PageLoader';
 
 const Gallery = lazy(() => import('./routes/Gallery/Gallery'));
 const MyProjects = lazy(() => import('./routes/MyProjects/MyProjects'));
+const Contacts = lazy(() => import('./routes/Contacts/Contacts'));
 
 function App() {
   const [isPageLoaded, setPageLoaded] = useState(false);
@@ -34,6 +35,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Gallery />} />
             <Route path="/projects" element={<MyProjects />} />
+            <Route path="/contacts" element={<Contacts />} />
           </Routes>
         </Suspense>
       </S.App>

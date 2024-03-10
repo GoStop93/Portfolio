@@ -30,8 +30,8 @@ function App() {
   return (
     <Router>
       <S.App>
+      <PageLoader isPageLoaded={isPageLoaded}/>
         <Suspense>
-          <PageLoader isPageLoaded={isPageLoaded}/>
           <Routes>
             <Route path="/" element={<Gallery />} />
             <Route path="/projects" element={<MyProjects />} />

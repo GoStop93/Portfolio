@@ -102,3 +102,17 @@ code {
     opacity: 0;
   }
 }
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInIconAnimation {
+  0% { opacity: 0; left: -50px; } 
+  100% { opacity: 1; left: 17vw; } 
+}

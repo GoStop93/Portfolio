@@ -2,25 +2,25 @@ import styled from 'styled-components';
 
 export const DownloadIcon = styled.img`
   position: absolute;
-  top: 35%;
+  top: 40%;
   width: 4vw;
-  left: 17vw;
+  left: 22vw;
   transition: all 0.3s;
   z-index: 2;
   opacity: 0;
-  filter: drop-shadow(1px 1px 1px #fafafa);
+  filter: drop-shadow(3px 3px 3px  #110B31);
 `;
 
 export const DownloadText = styled.div`
   position: absolute;
-  top: 45%;
-  left: 10vw;
+  top: 50%;
+  left: 14vw;
   z-index: 2;
   color: #5733a8;
   font-weight: 600;
   opacity: 0;
   transition: all 0.3s;
-  text-shadow: 1px 1px 1px #fafafa;
+  text-shadow: 3px 3px 3px #110B31;
 `;
 
 export const ResumeImage = styled.img`

@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const Header = styled.div` 
+export const Header = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,6 +18,7 @@ export const Text = styled.div`
   padding: 1vh;
   background-color: rgba(51, 51, 51, 0.5);
   border-radius: 1vh;
+  border: 1px solid #fff;
 `;
 
 export const Icon = styled.img`

@@ -1,7 +1,8 @@
-import htmlIcon from '../../assets/icons/html.png';
-import reactIcon from '../../assets/icons/react.png';
-import cssIcon from '../../assets/icons/css.png';
-import jsIcon from '../../assets/icons/js.png';
+import htmlSvg from '../../assets/icons/svgIcons/html.svg';
+import jsSvg from '../../assets/icons/svgIcons/js.svg';
+import gitSvg from '../../assets/icons/svgIcons/git.svg';
+import reactSvg from '../../assets/icons/svgIcons/react.svg';
+import tsSvg from '../../assets/icons/svgIcons/typescript.svg'
 
 export const options = {
   autoPlay: true,
@@ -107,22 +108,27 @@ export const options = {
       type: 'image',
       image: [
         {
-          src: htmlIcon,
+          src: htmlSvg,
           width: 10,
           height: 10,
         },
         {
-          src: reactIcon,
+          src: jsSvg,
           width: 10,
           height: 10,
         },
         {
-          src: cssIcon,
+          src: gitSvg,
           width: 10,
           height: 10,
         },
         {
-          src: jsIcon,
+          src: reactSvg,
+          width: 10,
+          height: 10,
+        },
+        {
+          src: tsSvg,
           width: 10,
           height: 10,
         },

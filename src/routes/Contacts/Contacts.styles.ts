@@ -9,7 +9,8 @@ position: relative;
 `;
 
 export const Content = styled.div`
+  display: flex;
   width: 100%;
   height: 100vh;
-  padding: 5vh;
+  padding: 15vh;
 `;

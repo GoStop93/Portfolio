@@ -1,13 +1,13 @@
 import * as S from './Resume.styles';
 
-import ResumeImage from '../../../assets/images/resume/resume.jpg';
+import ResumeImage from '../../../assets/images/resume/resume1.png';
 import icon from '../../../assets/icons/download.png';
 
 const Resume = () => {
 
   const handleDownloadClick = () => {
     const link = document.createElement('a');
-    link.href = 'resume.pdf';
+    link.href = '/resume.pdf';
     link.download = 'Litvinov Mikhail Frontend Developer.pdf';
     link.click();
   };

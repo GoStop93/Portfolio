@@ -2,7 +2,7 @@ import htmlSvg from '../../assets/icons/svgIcons/html.svg';
 import jsSvg from '../../assets/icons/svgIcons/js.svg';
 import gitSvg from '../../assets/icons/svgIcons/git.svg';
 import reactSvg from '../../assets/icons/svgIcons/react.svg';
-import tsSvg from '../../assets/icons/svgIcons/typescript.svg'
+import tsSvg from '../../assets/icons/svgIcons/typescript.svg';
 
 export const options = {
   autoPlay: true,
@@ -83,7 +83,7 @@ export const options = {
     },
     number: {
       limit: 0,
-      value: 60,
+      value: 70,
     },
 
     opacity: {

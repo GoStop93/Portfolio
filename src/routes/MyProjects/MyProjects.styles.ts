@@ -95,10 +95,10 @@ export const BackButton = styled.button`
   display: flex;
   align-items: center;
   gap: 5px;
-  margin-top: 2vh;
+  margin-top: 5vh;
   background-color: transparent;
   border: none;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 `;

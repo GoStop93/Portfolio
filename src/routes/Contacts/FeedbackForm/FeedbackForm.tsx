@@ -1,19 +1,25 @@
-import { RefObject, useRef } from 'react';
+import { RefObject, useRef, useState } from 'react';
 
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+
+import { toast } from 'react-toastify';
 
 import env from 'react-dotenv';
 import emailjs from '@emailjs/browser';
 
 import Input from '../../../components/Input/Input';
+import loaderIcon from '../../../assets/icons/loader.gif';
 
 import * as S from './FeedbackForm.styles';
 
 const FeedbackForm: React.FC = () => {
   const form: RefObject<HTMLFormElement> = useRef(null);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const sendEmail = (values: any) => {
+    setIsLoading(true);
     if (form.current) {
       emailjs
         .sendForm(env.EMAILJS_SERVICE_ID, env.EMAILJS_TEMPLATE_ID, form.current, {
@@ -21,10 +27,12 @@ const FeedbackForm: React.FC = () => {
         })
         .then(
           () => {
-            console.log('SUCCESS!');
+            toast.success('The message was successfully sent');
+            setIsLoading(false);
           },
           (error) => {
-            console.log('FAILED...', error.text);
+            toast.error('Something goes wrong');
+            setIsLoading(false);
           }
         );
     }
@@ -56,6 +64,11 @@ const FeedbackForm: React.FC = () => {
           <S.ButtonContainer>
             <S.ButtonText>Send email</S.ButtonText>
             <S.Button type="submit">Send email</S.Button>
+            {isLoading && (
+              <S.Hold>
+                <S.Loader src={loaderIcon} />
+              </S.Hold>
+            )}
           </S.ButtonContainer>
         </S.Form>
       </Formik>

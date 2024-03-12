@@ -45,7 +45,7 @@ export const Title = styled.div`
   color: #7f4efb;
   font-size: 3vh;
   width: min-content;
-  margin:  0 0 2vh 0;
+  margin: 0 0 2vh 0;
   padding: 1vh 3vh;
   background-color: #110b31;
   border-radius: 5vh;
@@ -112,4 +112,22 @@ export const Button = styled.button`
       border: 10px solid #5733a8;
     }
   }
+`;
+
+export const Hold = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 150px;
+  height: 50px;
+  border-radius: 25px;
+`;
+
+export const Loader = styled.img`
+  width: 6vw;
+  height: 5vw;
 `;

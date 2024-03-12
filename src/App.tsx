@@ -27,10 +27,21 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!isPageLoaded) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isPageLoaded]);
+
   return (
     <Router>
       <S.App>
-        {!isPageLoaded && <PageLoader isPageLoaded={isPageLoaded} />}
+      <PageLoader isPageLoaded={isPageLoaded}/>
         <Suspense>
           <Routes>
             <Route path="/" element={<Gallery />} />

@@ -1,5 +1,5 @@
 export interface FormValues {
-  name: string;
-  email: string;
+  from_name: string;
+  from_email: string;
   message: string;
 };

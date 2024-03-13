@@ -1,30 +1,43 @@
 import styled from 'styled-components';
 
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  gap: 2vw;
+`;
+
 export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 4vh;
   width: 20vh;
-  height: 4vh;
+  height: 6vh;
   font-size: 2.1vh;
   line-height: 2.1vh;
-  background-color: #5733a8;
+  background-color: rgba(17, 11, 49, 0.7);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 0 rgba(0, 0, 0, 0);
-  border-radius: 5px;
+  border-radius: 20%;
   gap: 1vh;
+  border: 1px solid #3A4A97;
+  transition: all 0.3s;
   &:hover {
     cursor: pointer;
-    background-color: #5733a8;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#5733a8), to(#804ff6));
-    background-image: linear-gradient(#5733a8, #804ff6);
+    background-color: rgba(51, 24, 112, 0.7);
+    border: 1px solid #fff;
+    box-shadow: 0 0 7px #7f4efb;
   }
 `;
 
+export const ProjectsIcon = styled.img`
+  height: 5vh;
+`;
+export const ContactsIcon = styled.img`
+  height: 4vh;
+`;
+
 export const Wrapper = styled.div`
-   height: 2000px;
+  height: 2000px;
 
   @media (width > 1536px) {
     height: 2200px;
@@ -114,8 +127,4 @@ export const Square = styled.div`
   border: 1px solid #fff;
   border-radius: 5px;
   margin: 0 5px;
-`;
-
-export const ButtonIcon = styled.img`
-  height: 3vh;
 `;

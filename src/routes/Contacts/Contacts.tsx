@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 import * as S from './Contacts.styles';
 import Particles from '../../components/Particles/Particles';
+import { Helmet } from 'react-helmet';
 
 import BackIcon from '../../assets/icons/arrowBack.png';
 
@@ -13,22 +14,27 @@ const Contacts: React.FC = () => {
   const navigate = useNavigate();
 
   const handleBackClick = () => {
-    navigate('/')
-  }
-  
+    navigate('/');
+  };
+
   return (
-    <S.Contacts>
-      <S.BackButton onClick={handleBackClick}>
-        <S.BackButtonImage src={BackIcon} />
-        <S.BackButtonText>Go back</S.BackButtonText>
-      </S.BackButton>
-      <Particles />
-      <S.Content>
-        <Resume />
-        <FeedbackForm />
-        <SocialLinks />
-      </S.Content>
-    </S.Contacts>
+    <>
+      <Helmet>
+        <title>Contacts</title>
+      </Helmet>
+      <S.Contacts>
+        <S.BackButton onClick={handleBackClick}>
+          <S.BackButtonImage src={BackIcon} />
+          <S.BackButtonText>Go back</S.BackButtonText>
+        </S.BackButton>
+        <Particles />
+        <S.Content>
+          <Resume />
+          <FeedbackForm />
+          <SocialLinks />
+        </S.Content>
+      </S.Contacts>
+    </>
   );
 };
 

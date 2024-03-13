@@ -47,7 +47,7 @@ export const Title = styled.div`
   width: min-content;
   margin: 0 0 2vh 0;
   padding: 1vh 3vh;
-  background-color: #110b31;
+  background-color: rgba(17, 11, 49, 0.7);
   border-radius: 5vh;
   border: 1px solid #2c106f;
 `;
@@ -128,6 +128,8 @@ export const Hold = styled.div`
 `;
 
 export const Loader = styled.img`
+  position: absolute;
+  top: -50%;
   width: 6vw;
   height: 5vw;
 `;

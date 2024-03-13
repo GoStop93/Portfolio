@@ -3,6 +3,7 @@ import Particles from '../../components/Particles/Particles';
 
 import Resume from './Resume/Resume';
 import FeedbackForm from './FeedbackForm/FeedbackForm';
+import SocialLinks from './SocialLinks/SocialLinks';
 
 const Contacts: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const Contacts: React.FC = () => {
       <S.Content>
         <Resume />
         <FeedbackForm />
+        <SocialLinks />
       </S.Content>
     </S.Contacts>
   );

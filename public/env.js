@@ -53,6 +53,7 @@ window.env = {
   "OS": "Windows_NT",
   "Path": "C:\\Users\\anduser\\OneDrive\\Desktop\\PortfolioProject\\portfolio\\node_modules\\.bin;C:\\Users\\anduser\\OneDrive\\Desktop\\PortfolioProject\\node_modules\\.bin;C:\\Users\\anduser\\OneDrive\\Desktop\\node_modules\\.bin;C:\\Users\\anduser\\OneDrive\\node_modules\\.bin;C:\\Users\\anduser\\node_modules\\.bin;C:\\Users\\node_modules\\.bin;C:\\node_modules\\.bin;C:\\Users\\anduser\\AppData\\Roaming\\npm\\node_modules\\npm\\node_modules\\@npmcli\\run-script\\lib\\node-gyp-bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Users\\anduser\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\anduser\\AppData\\Local\\gitkraken\\bin;C:\\Users\\anduser\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\heroku\\bin;C:\\Users\\anduser\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\anduser\\AppData\\Roaming\\npm",
   "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL",
+  "PHONE_NUMBER": "48508832664",
   "PROCESSOR_ARCHITECTURE": "AMD64",
   "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 142 Stepping 12, GenuineIntel",
   "PROCESSOR_LEVEL": "6",

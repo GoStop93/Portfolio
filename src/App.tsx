@@ -7,12 +7,14 @@ import PageLoader from './components/PageLoader/PageLoader';
 const Gallery = lazy(() => import('./routes/Gallery/Gallery'));
 const MyProjects = lazy(() => import('./routes/MyProjects/MyProjects'));
 const Contacts = lazy(() => import('./routes/Contacts/Contacts'));
+const Page404 = lazy(() => import('./routes/Page404/Page404'));
 
 function App() {
   const [isPageLoaded, setPageLoaded] = useState(false);
 
   useEffect(() => {
     const handlePageLoad = () => {
+      window.scrollTo(0,0)
       setTimeout(() => {
         setPageLoaded(true);
       }, 2500);
@@ -45,8 +47,9 @@ function App() {
         <Suspense>
           <Routes>
             <Route path="/" element={<Gallery />} />
-            <Route path="/projects" element={<MyProjects />} />
+            <Route path="/projects" element={<MyProjects isPageLoaded={isPageLoaded} />} />
             <Route path="/contacts" element={<Contacts />} />
+            <Route path='*' element={<Page404/>}/>
           </Routes>
         </Suspense>
       </S.App>

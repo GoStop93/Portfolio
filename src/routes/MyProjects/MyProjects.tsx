@@ -13,7 +13,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import BackIcon from '../../assets/icons/arrowBack.png';
 
-const MyProjects = () => {
+import { IMyProjectsProps } from './types';
+
+const MyProjects = ({ isPageLoaded }: IMyProjectsProps) => {
   const [offset, setOffset] = useState(0);
 
   const navigate = useNavigate();
@@ -101,32 +103,34 @@ const MyProjects = () => {
       <Helmet>
         <title>Projects</title>
       </Helmet>
-      <S.ProjectsPage>
-        <S.ProjectsHeader className="hero">
-          <S.BackButton onClick={handleBackClick}>
-            <S.BackButtonImage src={BackIcon} />
-            <S.BackButtonText>Go back</S.BackButtonText>
-          </S.BackButton>
-          <S.HeroImage src={heros} offset={offset} />
-          <S.MainTitle>
-            {' '}
-            <span>Gallery of</span> <span>my</span> <br /> <span>best</span> <span>pet</span> <span>projects</span>
-          </S.MainTitle>
-        </S.ProjectsHeader>
-        <S.Gallery>
-          <S.GalleryLeftContent offset={offset}>
-            {LeftSideProjects.map((project) => (
-              <Project className="leftItem" key={project.URL} project={project} />
-            ))}
-          </S.GalleryLeftContent>
-          <S.GalleryRightContent>
-            {RightSideProjects.map((project) => (
-              <Project className="rightItem" key={project.URL} project={project} />
-            ))}
-            <S.TextBlock className="rightItem">Coming soon...</S.TextBlock>
-          </S.GalleryRightContent>
-        </S.Gallery>
-      </S.ProjectsPage>
+      {isPageLoaded && (
+        <S.ProjectsPage>
+          <S.ProjectsHeader className="hero">
+            <S.BackButton onClick={handleBackClick}>
+              <S.BackButtonImage src={BackIcon} />
+              <S.BackButtonText>Go back</S.BackButtonText>
+            </S.BackButton>
+            <S.HeroImage src={heros} offset={offset} />
+            <S.MainTitle>
+              {' '}
+              <span>Gallery of</span> <span>my</span> <br /> <span>best</span> <span>pet</span> <span>projects</span>
+            </S.MainTitle>
+          </S.ProjectsHeader>
+          <S.Gallery>
+            <S.GalleryLeftContent offset={offset}>
+              {LeftSideProjects.map((project) => (
+                <Project className="leftItem" key={project.URL} project={project} />
+              ))}
+            </S.GalleryLeftContent>
+            <S.GalleryRightContent>
+              {RightSideProjects.map((project) => (
+                <Project className="rightItem" key={project.URL} project={project} />
+              ))}
+              <S.TextBlock className="rightItem">Coming soon...</S.TextBlock>
+            </S.GalleryRightContent>
+          </S.Gallery>
+        </S.ProjectsPage>
+      )}
     </>
   );
 };

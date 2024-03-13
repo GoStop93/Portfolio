@@ -6,7 +6,7 @@ export const SocialLinks = styled.div`
   align-items: center;
   gap: 2vw;
   bottom: 5vh;
-  right: 12.5vw;
+  right: 9.5vw;
   display: flex;
   padding: 2vh 4vh;
   background-color: rgba(17, 11, 49, 0.7);

@@ -31,7 +31,7 @@ export const FormWrapper = styled.div`
   position: absolute;
   width: fit-content;
   top: 5vh;
-  right: 40vh;
+  right: 36vh;
   z-index: 10;
 `;
 

@@ -49,12 +49,13 @@ export const OpenText = styled.div`
 `;
 
 export const ResumeImage = styled.img`
+  position: absolute;
+  top: 5vh;
+  left: 9vw;
   width: 32vw;
   height: 90vh;
   border-radius: 15px;
   transition: all 0.3s;
-  position: absolute;
-  top: 5vh;
   z-index: 1;
 `;
 

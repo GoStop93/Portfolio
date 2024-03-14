@@ -16,7 +16,7 @@ export const ExpandedListItemWrapper = styled.div`
   background-color: #5733a8;
   border: 2px solid white;
   width: 100vh;
-  max-height: 60vh;
+  max-height: 55vh;
   overflow-y: auto;
   overflow-x: hidden;
   &::-webkit-scrollbar {
@@ -77,7 +77,7 @@ export const AdditionalContent = styled.div`
 export const AdditionalContentItem = styled.div`
   display: flex;
   flex-direction: column;
-  animation: ${fadeIn} 1.2s ease forwards;
+  animation: ${fadeIn} 1.5s ease forwards;
   opacity: 0;
   border-radius: 1vh;
   background-color: #7f4efb;

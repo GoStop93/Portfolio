@@ -22,6 +22,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+:root {
+  --custom-cursor-warcraft: url('../public/warcraft.cur'), auto;
+}
+
+:root {
+  --custom-cursor-marvel: url('../public/marvel.cur'), auto;
+}
+
+:root {
+  --custom-cursor-cyberpunk: url('../public/cyberpunk.cur'), auto;
+}
+
 @font-face {
   font-family: raleway_c;
   src: url(./fonts/raleway-v22-cyrillic-300.woff2);

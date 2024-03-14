@@ -1,6 +1,7 @@
 import XworkImage from '../../../assets/images/xwork.jpg';
 import BankingImage from '../../../assets/images/banking.jpg';
 import CRMImage from '../../../assets/images/crm.png';
+import DigitalImage from '../../../assets/images/digital.jpg';
 
 interface InfoType {
   description: string;
@@ -20,7 +21,30 @@ export interface IExperienceEntity {
 
 export const ExperienceData: IExperienceEntity[] = [
   {
-    text: ['Xwork', 'Duration: 06.2023 – till now'],
+    text: ['Digital Giant', 'Duration: 08.2023 – till now'],
+    image: DigitalImage,
+    info: {
+      description: `The Digital Giant is a multi-discipline imaging and production studio co-founded by friends and experienced industry professionals Dallas Carroll and Alex Pickup back in 2007. The company is working primarily out of Los Angeles and London. The main business area is focused on the design for car manufacturers.
+ 
+        The main project goal is to develop a web application that will allow reviewing the digital assets thoroughly and quickly, hence – delivering them to the clients in a clear and efficient way.
+        The current business flow comes with a lot of manual operations such as making notes with circling issues in Adobe Acrobat and sending it out via messengers. Apart from that, the review processes can’t be initiated automatically, this imposes redundant
+        communication when Digital Giant administrators have to be intermediary between the artists and the clients going back and forth with each and every iteration of the review and updates. 
+
+        System enhancement will be primarily focused on making it easier to leave comments and spot the mistakes by making clear comparisons of different versions of the design. Besides, system notifications will help to speed up the review process by
+        eliminating the time lag in communication.`,
+      responsibilities: [
+        'Development of new features and components',
+        'Performing code reviews',
+        'Providing integration with API',
+        'Evaluated and improved the program effectiveness',
+        'Planning and estimating tasks',
+        'Reporting status and progress according to the project demands',
+      ],
+      technologies: 'TypeScript, React, React Query, React Hook Form, Zustand, Storybook, Axios, sass, MUI, Git',
+    },
+  },
+  {
+    text: ['Xwork', 'Duration: 03.2023 – 07.2023'],
     image: XworkImage,
     info: {
       description:
@@ -38,7 +62,7 @@ export const ExperienceData: IExperienceEntity[] = [
     },
   },
   {
-    text: ['Banking application', 'Duration: 09.2022 – 06.2023'],
+    text: ['Banking application', 'Duration: 03.2022 – 02.2023'],
     image: BankingImage,
     info: {
       description:
@@ -56,7 +80,7 @@ export const ExperienceData: IExperienceEntity[] = [
     },
   },
   {
-    text: ['VEDA', 'Duration: 04.2022 – 08.2022'],
+    text: ['VEDA', 'Duration: 10.2021 – 02.2022'],
     image: CRMImage,
     info: {
       description:

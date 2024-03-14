@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 import { motion } from 'framer-motion';
 
-export const Container = styled.div`
+export const Container = styled.div<{ cursor: string}>`
   border-radius: 8px;
   transform-style: preserve-3d;
   transform: perspective(921px);
   width: 630px;
   height: 300px;
-  cursor: pointer;
+  cursor: ${(props) => props.cursor};
 `;
 
 export const Content = styled(motion.div)<{ imageHeight: number; imageWidth: number }>`

@@ -6,7 +6,7 @@ import * as S from './Card.styles';
 import { ICardProps } from './types';
 
 export const Card = ({ project }: ICardProps) => {
-  const { imageUrl, type, URL } = project;
+  const { imageUrl, type, URL, cursor } = project;
 
   const [hover, setHover] = useState(false);
   const [tapped, setTapped] = useState(false);
@@ -83,7 +83,7 @@ export const Card = ({ project }: ICardProps) => {
   }, [hover, xy, centerPoint]);
 
   return (
-    <S.Container style={{ height: `${height}px`, width: `${width}px` }}>
+    <S.Container style={{ height: `${height}px`, width: `${width}px` }} cursor={cursor}>
       <S.Content
         imageHeight={height}
         imageWidth={width}

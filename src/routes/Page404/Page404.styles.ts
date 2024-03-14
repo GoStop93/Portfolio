@@ -72,7 +72,7 @@ export const ButtonContainer = styled.div`
   letter-spacing: 1px;
   background-color: #fafafa;
   &:hover {
-    border-radius: 35px;
+    border-radius: 5px;
   }
 `;
 

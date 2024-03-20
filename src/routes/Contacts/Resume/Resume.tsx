@@ -7,14 +7,14 @@ import openIcon from '../../../assets/icons/open.png';
 const Resume = () => {
   const handleDownloadClick = () => {
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
+    link.href = '/Litvinov_Mikhail_Frontend_Developer/resume.pdf';
     link.download = 'Litvinov Mikhail Frontend Developer.pdf';
     link.click();
   };
 
   const handleOpenClick = () => {
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
+    link.href = '/Litvinov_Mikhail_Frontend_Developer/resume.pdf';
     link.target = '_blank'; 
     link.click();
   };

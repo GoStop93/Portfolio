@@ -21,6 +21,7 @@ const Contacts: React.FC = () => {
     <>
       <Helmet>
         <title>Contacts</title>
+        <link rel="icon" href="ML.ico" />
       </Helmet>
       <S.Contacts>
         <S.BackButton onClick={handleBackClick}>

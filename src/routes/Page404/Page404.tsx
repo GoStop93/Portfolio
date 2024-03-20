@@ -18,6 +18,7 @@ const Page404: React.FC = () => {
     <>
       <Helmet>
         <title>404</title>
+        <link rel="icon" href="ML.ico" />
       </Helmet>
       <S.Page>
         <Particles is404 />

@@ -5,7 +5,7 @@ export interface IExpandedListItemProps {
   text: string[];
   info: {
     description: string;
-    responsibilities: string[];
+    achievements: string[];
     technologies: string;
   };
 }

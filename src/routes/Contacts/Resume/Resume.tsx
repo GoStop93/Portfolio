@@ -1,6 +1,6 @@
 import * as S from './Resume.styles';
 
-import ResumeImage from '../../../assets/images/resume/resume1.png';
+import ResumeImage from '../../../assets/images/resume/resume.png';
 import downloadIcon from '../../../assets/icons/download.png';
 import openIcon from '../../../assets/icons/open.png';
 

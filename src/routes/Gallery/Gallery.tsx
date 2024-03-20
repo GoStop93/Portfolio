@@ -116,11 +116,8 @@ const Gallery = () => {
               <S.TextRight>
                 <S.H3>Professional summary</S.H3>
                 <S.P>
-                  I am a Front-end developer with <S.Square>{experienceYears}</S.Square> {experienceYears > 1 ? 'years' : 'year'} and{' '}
-                  <S.Square>{experienceMonths}</S.Square> {experienceMonths > 1 || experienceMonths === 0 ? 'months' : 'month'} of software
-                  development experience, utilizing JavaScript as the main programming language and the React library. Eager to create high-quality
-                  and efficient software solutions and deliver value to clients. A quick learner with attention to details and a result-oriented
-                  mindset. Diligent, determined, highly reliable individual with exceptional creativity, problem solving and interpersonal skills
+                  I am a passionate  Front-end developer with <S.Square>{experienceYears}</S.Square> {experienceYears > 1 ? 'years' : 'year'} and{' '}
+                  <S.Square>{experienceMonths}</S.Square> {experienceMonths > 1 || experienceMonths === 0 ? 'months' : 'month'} of practical experience in crafting captivating digital interfaces. Proficient in JavaScript and React, I strive to translate ideas into code. From elegant user interfaces to seamless interactions, I blend creativity with technical prowess to create solutions that captivate and inspire. With an unparalleled ability to solve problems and an unquenchable drive for perfection, I am not just a developer - I am a dynamic force needed by your team to turn dreams into reality.
                 </S.P>
               </S.TextRight>
             </Frame>

@@ -19,7 +19,7 @@ export const Button = styled.button`
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 20%;
   gap: 1vh;
-  border: 1px solid #3A4A97;
+  border: 1px solid #3a4a97;
   transition: all 0.3s;
   &:hover {
     cursor: pointer;
@@ -39,8 +39,15 @@ export const ContactsIcon = styled.img`
 export const Wrapper = styled.div`
   height: 2000px;
 
-  @media (width > 1536px) {
+  @media (width >= 1920px) {
     height: 2200px;
+  }
+
+  @media (width >= 3440px) {
+    height: 2650px;
+  }
+  @media (width >= 3840px) {
+    height: 3350px;
   }
 `;
 

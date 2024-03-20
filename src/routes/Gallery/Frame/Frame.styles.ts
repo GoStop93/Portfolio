@@ -13,7 +13,8 @@ export const Frame = styled.div`
   &:nth-child(n + 4) {
     background-color: rgb(0 0 0 / 0.87);
   }
-  &:nth-child(2) {
+  &:nth-child(2),
+  &:nth-child(4) {
     background-color: rgb(0 0 0 / 1);
   }
 `;

@@ -28,7 +28,7 @@ const Gallery = () => {
   };
 
   useEffect(() => {
-    const startDate = new Date('2021-10-01');
+    const startDate = new Date('2021-01-01');
     const currentDate = new Date();
 
     let years = currentDate.getFullYear() - startDate.getFullYear();

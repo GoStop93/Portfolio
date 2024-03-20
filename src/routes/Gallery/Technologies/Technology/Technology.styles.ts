@@ -14,7 +14,7 @@ export const Label = styled.div`
 `;
 
 export const Text = styled.div`
-  font-size: 1.8vh;
+  font-size: 0.9vw;
   padding: 1vh;
   background-color: rgba(51, 51, 51, 0.5);
   border-radius: 1vh;
@@ -32,10 +32,10 @@ export const Technology = styled.div`
   align-items: center;
   justify-content: center;
   width: 17vw;
-  height: 24vh;
+  height: 14vw;
   background-color: #5733a8;
   border: 2px solid white;
   border-radius: 2vh;
-  padding: 2vh;
-  gap: 2vh;
+  padding: 1vw;
+  gap: 1vw;
 `;

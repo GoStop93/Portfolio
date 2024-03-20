@@ -41,7 +41,7 @@ export const ExperienceData: IExperienceEntity[] = [
     },
   },
   {
-    text: ['Digital Content Collaboration Platform', 'Duration: 03.2023 – 07.2023'],
+    text: ['Digital Content Collaboration Platform', 'Duration: 10.2022 – 07.2023'],
     image: CollaborationImage,
     info: {
       description:
@@ -54,7 +54,7 @@ export const ExperienceData: IExperienceEntity[] = [
     },
   },
   {
-    text: ['Banking application', 'Duration: 03.2022 – 02.2023'],
+    text: ['Banking application', 'Duration: 08.2021 – 09.2022'],
     image: BankingImage,
     info: {
       description:
@@ -67,7 +67,7 @@ export const ExperienceData: IExperienceEntity[] = [
     },
   },
   {
-    text: ['HR CRM System ', 'Duration: 10.2021 – 02.2022'],
+    text: ['HR CRM System ', 'Duration: 01.2021 – 07.2021'],
     image: CRMImage,
     info: {
       description:

@@ -31,8 +31,8 @@ export const Technology = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 17vw;
-  height: 14vw;
+  width: 18vw;
+  height: 12vw;
   background-color: #5733a8;
   border: 2px solid white;
   border-radius: 2vh;

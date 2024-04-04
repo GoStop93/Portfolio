@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
+
 import { Helmet } from 'react-helmet';
 
 import * as S from './MyProjects.styles';
@@ -12,8 +14,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import BackIcon from '../../assets/icons/arrowBack.png';
+import { IMyProjectsProps } from './types';
 
-const MyProjects = () => {
+const MyProjects = ({ isPageLoaded }: IMyProjectsProps) => {
   const [offset, setOffset] = useState(0);
 
   const navigate = useNavigate();
@@ -26,19 +29,10 @@ const MyProjects = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      requestAnimationFrame(() => {
-        setOffset(window.scrollY);
-      });
-    };
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  useLenis(({ scroll }) => {
+    setOffset(scroll);
+  });
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -97,18 +91,18 @@ const MyProjects = () => {
   }, []);
 
   return (
-    <>
+    <ReactLenis root>
       <Helmet>
         <title>Projects</title>
         <link rel="icon" href="ML.ico" />
       </Helmet>
-      <S.ProjectsPage>
+      <S.ProjectsPage isPageLoaded={isPageLoaded}>
         <S.ProjectsHeader className="hero">
           <S.BackButton onClick={handleBackClick}>
             <S.BackButtonImage src={BackIcon} />
             <S.BackButtonText>Go back</S.BackButtonText>
           </S.BackButton>
-          <S.HeroImage src={heros} offset={offset} />
+          <S.HeroImage src={heros} offset={offset}  isPageLoaded={isPageLoaded}/>
           <S.MainTitle>
             {' '}
             <span>Gallery of</span> <span>my</span> <br /> <span>best</span> <span>pet</span> <span>projects</span>
@@ -128,7 +122,7 @@ const MyProjects = () => {
           </S.GalleryRightContent>
         </S.Gallery>
       </S.ProjectsPage>
-    </>
+    </ReactLenis>
   );
 };
 

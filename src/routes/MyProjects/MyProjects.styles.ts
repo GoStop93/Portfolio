@@ -1,26 +1,35 @@
 import { styled } from 'styled-components';
 
-export const ProjectsPage = styled.div`
+interface OffsetProps {
+  offset: number;
+  isPageLoaded?: boolean
+}
+
+export const ProjectsPage = styled.div<{isPageLoaded: boolean}>`
   background-color: black;
   font-family: raleway_project;
   color: #fafafa;
   padding: 0 7vh;
   overflow: hidden;
+  height: ${(props) => (props.isPageLoaded ? 'auto' : '0px')};
 `;
 
 export const ProjectsHeader = styled.div`
   height: 100vh;
 `;
 
-export const HeroImage = styled.img<{ offset: number }>`
-  width: 120vh;
-  position: absolute;
-  right: 5vw;
-  top: 5vh;
-  will-change: transform;
-  transform: translate3d(0, ${(props) => props.offset / 5}px, 0);
-  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0.1)));
-`;
+export const HeroImage = styled.img.attrs<OffsetProps>((props) => ({
+  style: {
+    width: '120vh',
+    position: 'absolute',
+    right: '5vw',
+    top: '5vh',
+    willChange: 'transform',
+    transform: `translate3d(0, ${props.offset / 5}px, 0)`,
+    WebkitMaskImage: `-webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0.1)))`,
+    height: props.isPageLoaded ? 'auto' : '0px',
+  },
+}))<OffsetProps>``;
 
 export const MainTitle = styled.h1`
   font-size: 7vw;
@@ -73,11 +82,13 @@ export const Gallery = styled.main`
   }
 `;
 
-export const GalleryLeftContent = styled.div<{ offset: number }>`
-  gap: 30vh;
-  will-change: transform;
-  transform: translate3d(0, ${(props) => props.offset / 5}px, 0);
-`;
+export const GalleryLeftContent = styled.div.attrs<OffsetProps>((props) => ({
+  style: {
+    gap: '30vh',
+    willChange: 'transform',
+    transform: `translate3d(0, ${props.offset / 5}px, 0)`,
+  },
+}))<OffsetProps>``;
 
 export const GalleryRightContent = styled.div`
   margin-top: 65vh;

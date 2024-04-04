@@ -1,6 +1,10 @@
 import warcraft from '../../assets/images/gallery/craft_in_warcraft.jpg';
 import cdpr from '../../assets/images/gallery/cdpr.jpg';
 import marvel from '../../assets/images/gallery/marvel.jpg';
+
+export interface IMyProjectsProps {
+  isPageLoaded: boolean;
+}
 export interface IProjectEntity {
   imageUrl: string;
   URL: string;

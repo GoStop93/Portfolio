@@ -47,7 +47,7 @@ function App() {
         <Suspense>
           <Routes>
             <Route path="/" element={<Gallery />} />
-            <Route path="/projects" element={<MyProjects />} />
+            <Route path="/projects" element={<MyProjects isPageLoaded={isPageLoaded} />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path='*' element={<Page404/>}/>
           </Routes>

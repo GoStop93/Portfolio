@@ -11,6 +11,9 @@ import FrontEnd from '../../assets/images/frontend.gif';
 import projectsIcon from '../../assets/icons/projects.png';
 import contactsIcon from '../../assets/icons/contacts.png';
 import { Experience } from './Experience/Experience';
+import { usePages } from './store/store';
+import { getActivePage, getSetActivePage } from './store/selectors';
+import { ACTIVE_PAGE_NAME } from './store/types';
 
 const Gallery = () => {
   const [experienceYears, setExperienceYears] = useState(0);
@@ -18,6 +21,11 @@ const Gallery = () => {
   const [isExperienceVisible, setExperienceVisible] = useState(false);
 
   let navigate = useNavigate();
+
+  const activePage = usePages(getActivePage);
+  const changeActivePage = usePages(getSetActivePage);
+
+  console.log(activePage);
 
   const handleProjectsOpen = () => {
     navigate('/projects');
@@ -83,11 +91,18 @@ const Gallery = () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    window.scrollTo(0, 1);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
+  }, []);
+
+  useEffect(() => {
+    if (activePage === ACTIVE_PAGE_NAME.Gallery) {
+      window.scrollTo(0, 1);
+    } else {
+      window.scrollTo(0, 2000);
+      changeActivePage(ACTIVE_PAGE_NAME.Gallery);
+    }
   }, []);
 
   return (
@@ -116,8 +131,12 @@ const Gallery = () => {
               <S.TextRight>
                 <S.H3>Professional summary</S.H3>
                 <S.P>
-                  I am a passionate  Front-end developer with <S.Square>{experienceYears}</S.Square> {experienceYears > 1 ? 'years' : 'year'} and{' '}
-                  <S.Square>{experienceMonths}</S.Square> {experienceMonths > 1 || experienceMonths === 0 ? 'months' : 'month'} of practical experience in crafting captivating digital interfaces. Proficient in JavaScript and React, I strive to translate ideas into code. From elegant user interfaces to seamless interactions, I blend creativity with technical prowess to create solutions that captivate and inspire. With an unparalleled ability to solve problems and an unquenchable drive for perfection, I am not just a developer - I am a dynamic force needed by your team to turn dreams into reality.
+                  I am a passionate Front-end developer with <S.Square>{experienceYears}</S.Square> {experienceYears > 1 ? 'years' : 'year'} and{' '}
+                  <S.Square>{experienceMonths}</S.Square> {experienceMonths > 1 || experienceMonths === 0 ? 'months' : 'month'} of practical
+                  experience in crafting captivating digital interfaces. Proficient in JavaScript and React, I strive to translate ideas into code.
+                  From elegant user interfaces to seamless interactions, I blend creativity with technical prowess to create solutions that captivate
+                  and inspire. With an unparalleled ability to solve problems and an unquenchable drive for perfection, I am not just a developer - I
+                  am a dynamic force needed by your team to turn dreams into reality.
                 </S.P>
               </S.TextRight>
             </Frame>

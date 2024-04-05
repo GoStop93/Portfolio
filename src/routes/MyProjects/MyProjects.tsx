@@ -15,11 +15,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import BackIcon from '../../assets/icons/arrowBack.png';
 import { IMyProjectsProps } from './types';
+import { usePages } from '../Gallery/store/store';
+import { getSetActivePage } from '../Gallery/store/selectors';
+import { ACTIVE_PAGE_NAME } from '../Gallery/store/types';
 
 const MyProjects = ({ isPageLoaded }: IMyProjectsProps) => {
   const [offset, setOffset] = useState(0);
 
   const navigate = useNavigate();
+
+  const changeActivePage = usePages(getSetActivePage);
 
   const handleBackClick = () => {
     navigate('/');
@@ -27,6 +32,7 @@ const MyProjects = ({ isPageLoaded }: IMyProjectsProps) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    changeActivePage(ACTIVE_PAGE_NAME.Projects)
   }, []);
 
 

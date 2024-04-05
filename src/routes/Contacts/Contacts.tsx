@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import * as S from './Contacts.styles';
@@ -10,12 +11,22 @@ import Resume from './Resume/Resume';
 import FeedbackForm from './FeedbackForm/FeedbackForm';
 import SocialLinks from './SocialLinks/SocialLinks';
 
+import { usePages } from '../Gallery/store/store';
+import { getSetActivePage } from '../Gallery/store/selectors';
+import { ACTIVE_PAGE_NAME } from '../Gallery/store/types';
+
 const Contacts: React.FC = () => {
   const navigate = useNavigate();
+
+  const changeActivePage = usePages(getSetActivePage);
 
   const handleBackClick = () => {
     navigate('/');
   };
+
+  useEffect(() => {
+    changeActivePage(ACTIVE_PAGE_NAME.Projects)
+  }, []);
 
   return (
     <>

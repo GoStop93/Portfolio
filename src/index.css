@@ -131,10 +131,10 @@ code {
 
 @keyframes moveFromLeft {
   0% {
-    left: -25vw; 
+    left: -25vw;
   }
   100% {
-    left: 100vw; 
+    left: 100vw;
   }
 }
 

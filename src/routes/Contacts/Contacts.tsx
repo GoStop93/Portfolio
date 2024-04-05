@@ -6,6 +6,7 @@ import Particles from '../../components/Particles/Particles';
 import { Helmet } from 'react-helmet';
 
 import BackIcon from '../../assets/icons/arrowBack.png';
+import transition from '../../transition';
 
 import Resume from './Resume/Resume';
 import FeedbackForm from './FeedbackForm/FeedbackForm';
@@ -25,7 +26,7 @@ const Contacts: React.FC = () => {
   };
 
   useEffect(() => {
-    changeActivePage(ACTIVE_PAGE_NAME.Projects)
+    changeActivePage(ACTIVE_PAGE_NAME.Projects);
   }, []);
 
   return (
@@ -50,4 +51,4 @@ const Contacts: React.FC = () => {
   );
 };
 
-export default Contacts;
+export default transition(Contacts);

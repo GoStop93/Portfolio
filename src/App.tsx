@@ -1,8 +1,12 @@
-import React, { Suspense, lazy, useEffect, useState } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import * as S from './App.styles';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
+
+import { AnimatePresence } from 'framer-motion';
 
 import PageLoader from './components/PageLoader/PageLoader';
+import { usePages } from './routes/Gallery/store/store';
+import { getIsPageLoaded, getSetIsPageLoaded } from './routes/Gallery/store/selectors';
 
 const Gallery = lazy(() => import('./routes/Gallery/Gallery'));
 const MyProjects = lazy(() => import('./routes/MyProjects/MyProjects'));
@@ -10,11 +14,14 @@ const Contacts = lazy(() => import('./routes/Contacts/Contacts'));
 const Page404 = lazy(() => import('./routes/Page404/Page404'));
 
 function App() {
-  const [isPageLoaded, setPageLoaded] = useState(false);
+  const location = useLocation();
+
+  const isPageLoaded = usePages(getIsPageLoaded);
+  const setPageLoaded = usePages(getSetIsPageLoaded);
 
   useEffect(() => {
     const handlePageLoad = () => {
-      window.scrollTo(0,0)
+      window.scrollTo(0, 0);
       setTimeout(() => {
         setPageLoaded(true);
       }, 2500);
@@ -41,19 +48,19 @@ function App() {
   }, [isPageLoaded]);
 
   return (
-    <Router>
-      <S.App>
-      <PageLoader isPageLoaded={isPageLoaded}/>
-        <Suspense>
-          <Routes>
+    <S.App>
+      <PageLoader isPageLoaded={isPageLoaded} />
+      <Suspense>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Gallery />} />
-            <Route path="/projects" element={<MyProjects isPageLoaded={isPageLoaded} />} />
+            <Route path="/projects" element={<MyProjects />} />
             <Route path="/contacts" element={<Contacts />} />
-            <Route path='*' element={<Page404/>}/>
+            <Route path="*" element={<Page404 />} />
           </Routes>
-        </Suspense>
-      </S.App>
-    </Router>
+        </AnimatePresence>
+      </Suspense>
+    </S.App>
   );
 }
 

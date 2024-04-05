@@ -9,5 +9,10 @@ export const usePages = create<IRoutesStore>()(
     setActivePage: (value: ACTIVE_PAGE_NAME) => {
       set(() => ({ activePage: value }));
     },
-  })),
+
+    isPageLoaded: false,
+    setIsPageLoaded: (value: boolean) => {
+      set(() => ({ isPageLoaded: value }));
+    },
+  }))
 );

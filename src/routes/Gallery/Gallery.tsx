@@ -14,6 +14,7 @@ import { Experience } from './Experience/Experience';
 import { usePages } from './store/store';
 import { getActivePage, getSetActivePage } from './store/selectors';
 import { ACTIVE_PAGE_NAME } from './store/types';
+import transition from '../../transition';
 
 const Gallery = () => {
   const [experienceYears, setExperienceYears] = useState(0);
@@ -24,8 +25,6 @@ const Gallery = () => {
 
   const activePage = usePages(getActivePage);
   const changeActivePage = usePages(getSetActivePage);
-
-  console.log(activePage);
 
   const handleProjectsOpen = () => {
     navigate('/projects');
@@ -100,7 +99,8 @@ const Gallery = () => {
     if (activePage === ACTIVE_PAGE_NAME.Gallery) {
       window.scrollTo(0, 1);
     } else {
-      window.scrollTo(0, 2000);
+      window.scrollTo(0, document.body.scrollHeight);
+
       changeActivePage(ACTIVE_PAGE_NAME.Gallery);
     }
   }, []);
@@ -184,4 +184,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default transition(Gallery);

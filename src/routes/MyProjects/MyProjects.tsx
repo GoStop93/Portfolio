@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
 
 import { Helmet } from 'react-helmet';
+import transition from '../../transition';
 
 import * as S from './MyProjects.styles';
 import heros from '../../assets/images/heros.jpg';
@@ -14,17 +15,18 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import BackIcon from '../../assets/icons/arrowBack.png';
-import { IMyProjectsProps } from './types';
+
 import { usePages } from '../Gallery/store/store';
-import { getSetActivePage } from '../Gallery/store/selectors';
+import { getIsPageLoaded, getSetActivePage } from '../Gallery/store/selectors';
 import { ACTIVE_PAGE_NAME } from '../Gallery/store/types';
 
-const MyProjects = ({ isPageLoaded }: IMyProjectsProps) => {
+const MyProjects = () => {
   const [offset, setOffset] = useState(0);
 
   const navigate = useNavigate();
 
   const changeActivePage = usePages(getSetActivePage);
+  const isPageLoaded = usePages(getIsPageLoaded);
 
   const handleBackClick = () => {
     navigate('/');
@@ -32,9 +34,8 @@ const MyProjects = ({ isPageLoaded }: IMyProjectsProps) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    changeActivePage(ACTIVE_PAGE_NAME.Projects)
+    changeActivePage(ACTIVE_PAGE_NAME.Projects);
   }, []);
-
 
   useLenis(({ scroll }) => {
     setOffset(scroll);
@@ -108,7 +109,7 @@ const MyProjects = ({ isPageLoaded }: IMyProjectsProps) => {
             <S.BackButtonImage src={BackIcon} />
             <S.BackButtonText>Go back</S.BackButtonText>
           </S.BackButton>
-          <S.HeroImage src={heros} offset={offset}  isPageLoaded={isPageLoaded}/>
+          <S.HeroImage src={heros} offset={offset} isPageLoaded={isPageLoaded} />
           <S.MainTitle>
             {' '}
             <span>Gallery of</span> <span>my</span> <br /> <span>best</span> <span>pet</span> <span>projects</span>
@@ -132,4 +133,4 @@ const MyProjects = ({ isPageLoaded }: IMyProjectsProps) => {
   );
 };
 
-export default MyProjects;
+export default transition(MyProjects);

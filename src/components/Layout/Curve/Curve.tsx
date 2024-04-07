@@ -54,11 +54,13 @@ const Curve = () => {
     },
   };
 
+  const currentRoute = routes[currentPath];
+
   return (
     <S.Curve>
       <>
         <S.Background dimensions={dimensions} />
-        <S.Title {...anim(title)}>{routes[currentPath]}</S.Title>
+        <S.Title {...anim(title)}>{currentRoute ? currentRoute : '404'}</S.Title>
         {dimensions.width > 0 && <SVGComponent {...dimensions} />}
       </>
     </S.Curve>

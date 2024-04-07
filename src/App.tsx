@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import * as S from './App.styles';
 import { Route, Routes, useLocation } from 'react-router-dom';
 
@@ -8,10 +8,10 @@ import PageLoader from './components/PageLoader/PageLoader';
 import { usePages } from './routes/Gallery/store/store';
 import { getIsPageLoaded, getSetIsPageLoaded } from './routes/Gallery/store/selectors';
 
-const Gallery = lazy(() => import('./routes/Gallery/Gallery'));
-const MyProjects = lazy(() => import('./routes/MyProjects/MyProjects'));
-const Contacts = lazy(() => import('./routes/Contacts/Contacts'));
-const Page404 = lazy(() => import('./routes/Page404/Page404'));
+import Gallery from './routes/Gallery/Gallery';
+import MyProjects from './routes/MyProjects/MyProjects';
+import Contacts from './routes/Contacts/Contacts';
+import Page404 from './routes/Page404/Page404';
 
 function App() {
   const location = useLocation();

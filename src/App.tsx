@@ -27,12 +27,14 @@ function App() {
       }, 2500);
     };
 
-    window.addEventListener('load', handlePageLoad);
-    document.addEventListener('DOMContentLoaded', handlePageLoad);
-
+    if (document.readyState === 'complete') {
+      handlePageLoad();
+    } else {
+      window.addEventListener('load', handlePageLoad);
+    }
+  
     return () => {
       window.removeEventListener('load', handlePageLoad);
-      document.removeEventListener('DOMContentLoaded', handlePageLoad);
     };
   }, []);
 

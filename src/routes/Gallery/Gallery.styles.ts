@@ -32,30 +32,20 @@ export const Button = styled.button`
 export const ProjectsIcon = styled.img`
   height: 5vh;
 `;
+
 export const ContactsIcon = styled.img`
   height: 4vh;
 `;
 
 export const Wrapper = styled.div`
-  height: 2000px;
-
-  @media (width >= 1920px) {
-    height: 2200px;
-  }
-
-  @media (width >= 3440px) {
-    height: 2650px;
-  }
-  @media (width >= 3840px) {
-    height: 3350px;
-  }
+  height: calc(1vh * 320);
 `;
 
 export const Container = styled.div`
   width: 100%;
   height: 100%;
   position: fixed;
-  perspective: 1500px;
+  perspective: calc(1vh * 110);
 `;
 
 export const Gallery = styled.section`

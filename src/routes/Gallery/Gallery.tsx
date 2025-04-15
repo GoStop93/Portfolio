@@ -51,11 +51,12 @@ const Gallery = () => {
   }, []);
 
   useEffect(() => {
-    let zSpacing = -1000,
-      lastPos = zSpacing / 5,
-      $frames = document.getElementsByClassName('frame'),
-      frames = Array.from($frames),
-      zVals: any[] = [];
+    const unit = window.innerHeight / 100;
+    let zSpacing = -unit * 80;
+    let lastPos = zSpacing / 2;
+    const $frames = document.getElementsByClassName('frame');
+    const frames = Array.from($frames);
+    const zVals: number[] = [];
 
     function handleScroll() {
       let top = document.documentElement.scrollTop,
@@ -65,7 +66,7 @@ const Gallery = () => {
 
       frames.forEach(function (n, i) {
         zVals.push(i * zSpacing + zSpacing);
-        zVals[i] += delta * -5.5;
+        zVals[i] += delta * -2.5;
         let frame = frames[i],
           transform = `translateZ(${zVals[i]}px)`,
           opacity = zVals[i] < Math.abs(zSpacing) / 1.8 ? 1 : 0;

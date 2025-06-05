@@ -71,7 +71,7 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
   font-family: raleway_c;
-  font-weight: 100;
+  font-weight: 500;
   font-size: 4vh;
   line-height: 1;
 `;
@@ -117,11 +117,12 @@ export const Square = styled.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   width: 2vh;
   height: 2vh;
-  padding: 10px;
-  background-color: transparent;
+  padding: 15px 15px 20px;
+  background-color: #5733a8;
   border: 1px solid #fff;
   border-radius: 5px;
-  margin: 0 5px;
+  font-weight: 700;
 `;

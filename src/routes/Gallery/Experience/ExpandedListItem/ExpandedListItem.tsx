@@ -19,7 +19,9 @@ export const ExpandedListItem = ({ index, onClick, image, text, info }: IExpande
         <Flipped inverseFlipId={createCardFlipId(index)}>
           <S.ExpandedListItemContent>
             <Flipped flipId={`avatar-${index}`} stagger="card-content" delayUntil={createCardFlipId(index)}>
-              <S.AvatarExpanded image={image} />
+              <S.AvatarExpanded>
+                <S.Image src={image} alt="project-icon" />
+              </S.AvatarExpanded>
             </Flipped>
             <S.Description>
               {text.map((item, i) => (

@@ -19,7 +19,8 @@ export const Experience = ({ isExperienceVisible }: IExperienceProps) => {
     }
   }, [isExperienceVisible]);
 
-  const listData = ExperienceData;
+  const listData1 = ExperienceData.filter((item) => item.id % 2 !== 0);
+  const listData2 = ExperienceData.filter((item) => item.id % 2 === 0);
 
   return (
     <S.Experience>
@@ -34,17 +35,30 @@ export const Experience = ({ isExperienceVisible }: IExperienceProps) => {
         }}
         decisionData={focused}
       >
-        <S.List>
-          {listData.map((item, index) => (
-            <S.Item key={index}>
-              {index === focused ? (
-                <ExpandedListItem index={focused} onClick={handleOpen} image={item.image} text={item.text} info={item.info} />
-              ) : (
-                <ListItem index={index} onClick={handleOpen} image={item.image} text={item.text} />
-              )}
-            </S.Item>
-          ))}
-        </S.List>
+        <S.ListWrapper>
+          <S.List>
+            {listData1.map((item, index) => (
+              <S.Item key={item.id}>
+                {item.id === focused ? (
+                  <ExpandedListItem index={focused} onClick={handleOpen} image={item.image} text={item.text} info={item.info} />
+                ) : (
+                  <ListItem index={item.id} onClick={handleOpen} image={item.image} text={item.text} />
+                )}
+              </S.Item>
+            ))}
+          </S.List>
+          <S.List>
+            {listData2.map((item, index) => (
+              <S.Item key={item.id}>
+                {item.id === focused ? (
+                  <ExpandedListItem index={focused} onClick={handleOpen} image={item.image} text={item.text} info={item.info} />
+                ) : (
+                  <ListItem index={item.id} onClick={handleOpen} image={item.image} text={item.text} />
+                )}
+              </S.Item>
+            ))}
+          </S.List>
+        </S.ListWrapper>
       </Flipper>
     </S.Experience>
   );

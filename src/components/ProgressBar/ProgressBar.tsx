@@ -1,5 +1,5 @@
 import * as S from './ProgressBar.styles';
-import Icon from '../../assets/images/FullSize.png';
+import Icon from '../../assets/images/me-full-size.webp';
 
 const ProgressBar: React.FC = () => {
   return (

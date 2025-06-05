@@ -15,6 +15,7 @@ export const Label = styled.div`
 
 export const Text = styled.div`
   font-size: 0.9vw;
+  line-height: normal;
   padding: 1vh;
   background-color: rgba(51, 51, 51, 0.5);
   border-radius: 1vh;

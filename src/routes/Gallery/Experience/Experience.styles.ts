@@ -1,7 +1,10 @@
 import { styled } from 'styled-components';
 
-export const Experience = styled.div`
-  margin-left: 50vh;
+export const Experience = styled.div``;
+
+export const ListWrapper = styled.div`
+  display: flex;
+  gap: 1.5vh;
 `;
 
 export const List = styled.ul`

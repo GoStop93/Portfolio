@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import transition from '../../transition';
 
 import Particles from '../../components/Particles/Particles';
-import heroImage from '../../assets/images/heroFor404.png';
+import heroImage from '../../assets/images/me-full-size.webp';
 
 import * as S from './Page404.styles';
 

@@ -1,21 +1,37 @@
 import styled from 'styled-components';
 
-export const DownloadIcon = styled.img`
+export const OpenIcon = styled.img`
   position: absolute;
-  top: 63%;
+  bottom: 6vw;
   width: 4vw;
-  left: 22vw;
+  left: 50%;
+  transform: translateX(-50%);
   transition: all 0.3s;
   z-index: 2;
   opacity: 0;
   filter: drop-shadow(3px 3px 3px #110b31);
 `;
 
-export const OpenIcon = styled.img`
+export const OpenText = styled.div`
   position: absolute;
-  top: 19%;
+  bottom: 12vw;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: #8c63f0;
+  font-weight: 600;
+  font-size: 2vw;
+  opacity: 0;
+  transition: all 0.3s;
+  text-shadow: 3px 3px 3px #110b31;
+`;
+
+export const DownloadIcon = styled.img`
+  position: absolute;
+  top: 6vw;
   width: 4vw;
-  left: 22vw;
+  left: 50%;
+  transform: translateX(-50%);
   transition: all 0.3s;
   z-index: 2;
   opacity: 0;
@@ -24,36 +40,26 @@ export const OpenIcon = styled.img`
 
 export const DownloadText = styled.div`
   position: absolute;
-  top: 73%;
-  left: 15vw;
+  top: 12vw;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
-  color: #5733a8;
+  color: #8c63f0;
   font-weight: 600;
   font-size: 2vw;
   opacity: 0;
   transition: all 0.3s;
   text-shadow: 3px 3px 3px #110b31;
-`;
-
-export const OpenText = styled.div`
-  position: absolute;
-  top: 29%;
-  left: 17vw;
-  z-index: 2;
-  color: #5733a8;
-  font-weight: 600;
-  font-size: 2vw;
-  opacity: 0;
-  transition: all 0.3s;
-  text-shadow: 3px 3px 3px #110b31;
+  white-space: nowrap;
 `;
 
 export const ResumeImage = styled.img`
   position: absolute;
-  top: 5vh;
+  top: 50%;
   left: 9vw;
+  transform: translateY(-50%);
   width: 32vw;
-  height: 90vh;
+  height: auto;
   border-radius: 15px;
   transition: all 0.3s;
   z-index: 1;
@@ -61,7 +67,8 @@ export const ResumeImage = styled.img`
 
 export const ResumeTopWrapper = styled.div`
   position: absolute;
-  top: 5vh;
+  top: 5%;
+  left: 9vw;
   width: 32vw;
   height: 45vh;
   border-radius: 15px 15px 0 0;
@@ -74,15 +81,15 @@ export const ResumeTopWrapper = styled.div`
     ~ ${ResumeImage} {
       filter: brightness(0.25);
     }
-    ~ ${DownloadIcon} {
+    ${DownloadIcon} {
       opacity: 1;
       transition: opacity 1s, left 1s;
     }
-    ~ ${OpenIcon} {
+    ${OpenIcon} {
       opacity: 1;
       transition: opacity 1s, left 1s;
     }
-    ~ ${OpenText} {
+    ${OpenText} {
       opacity: 1;
       span {
         opacity: 0;
@@ -125,7 +132,8 @@ export const ResumeTopWrapper = styled.div`
 
 export const ResumeBottomWrapper = styled.div`
   position: absolute;
-  top: 50vh;
+  bottom: 5%;
+  left: 9vw;
   width: 32vw;
   height: 45vh;
   border-radius: 0 0 15px 15px;
@@ -138,15 +146,15 @@ export const ResumeBottomWrapper = styled.div`
     ~ ${ResumeImage} {
       filter: brightness(0.25);
     }
-    ~ ${DownloadIcon} {
+    ${DownloadIcon} {
       opacity: 1;
       transition: opacity 1s, left 1s;
     }
-    ~ ${OpenIcon} {
+    ${OpenIcon} {
       opacity: 1;
       transition: opacity 1s, left 1s;
     }
-    ~ ${DownloadText} {
+    ${DownloadText} {
       opacity: 1;
       span {
         opacity: 0;

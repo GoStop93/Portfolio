@@ -13,7 +13,9 @@ export const ListItem = ({ index, onClick, image, text }: IListItemProps) => {
         <Flipped inverseFlipId={createCardFlipId(index)}>
           <S.ListItemContent>
             <Flipped flipId={`avatar-${index}`} stagger="card-content" shouldFlip={shouldFlip(index)} delayUntil={createCardFlipId(index)}>
-              <S.Avatar image={image} />
+              <S.Avatar>
+                <S.Image src={image} alt="project-icon" />
+              </S.Avatar>
             </Flipped>
             <S.Description>
               {text.map((item, i) => (

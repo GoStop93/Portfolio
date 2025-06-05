@@ -1,16 +1,21 @@
 import styled from 'styled-components';
 
-export const Avatar = styled.div<{ image: any }>`
+export const Avatar = styled.div`
   width: 7vh;
   height: 7vh;
+  padding: 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #432393;
   border-radius: 100vh;
-  background-image: url(${(props) => props.image});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   margin-right: 3.5vh;
   border: 2px solid white;
   transition: border 0.2s;
+`;
+
+export const Image = styled.img`
+  width: 85%;
 `;
 
 export const ListItemWrapper = styled.div`
@@ -40,6 +45,7 @@ export const DescriptionItem = styled.p`
   font-size: 1.5vh;
   line-height: 0.7vh;
   color: white;
+  font-weight: 600;
 `;
 
 export const Description = styled.div`

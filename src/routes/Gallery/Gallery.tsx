@@ -35,7 +35,7 @@ const Gallery = () => {
   };
 
   useEffect(() => {
-    const startDate = new Date('2021-01-01');
+    const startDate = new Date('2020-05-01');
     const currentDate = new Date();
 
     let years = currentDate.getFullYear() - startDate.getFullYear();
@@ -71,8 +71,7 @@ const Gallery = () => {
           transform = `translateZ(${zVals[i]}px)`,
           opacity = zVals[i] < Math.abs(zSpacing) / 1.8 ? 1 : 0;
         if (frame instanceof HTMLElement) {
-          frame.style.cssText = `transform: ${transform}; opacity: ${opacity};`;
-
+          frame.style.cssText = `transform: ${transform}; opacity: ${opacity}; z-index: ${frame.classList.contains('experience') ? 10 : 1};`;
           if (opacity === 0) {
             frame.style.pointerEvents = 'none';
           } else {

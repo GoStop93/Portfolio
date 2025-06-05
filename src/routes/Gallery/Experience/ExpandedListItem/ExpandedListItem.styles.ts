@@ -13,6 +13,7 @@ export const fadeIn = keyframes`
 
 export const ExpandedListItemWrapper = styled.div`
   cursor: pointer;
+  box-sizing: border-box;
   background-color: #5733a8;
   border: 2px solid white;
   width: 100vh;
@@ -41,16 +42,21 @@ export const ExpandedListItemContent = styled.div`
   align-items: center;
 `;
 
-export const AvatarExpanded = styled(Avatar)<{ image: any }>`
+export const AvatarExpanded = styled(Avatar)`
   width: 10vh;
   height: 10vh;
+  padding: 1vh;
+  display: flex;
+  background-color: #432393;
+  justify-content: center;
+  align-items: center;
   margin-right: 0;
   margin: 2vh;
-  background-image: url(${(props) => props.image});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   border: 2px solid white;
+`;
+
+export const Image = styled.img`
+  width: 85%;
 `;
 
 export const Description = styled.div`
@@ -83,7 +89,7 @@ export const AdditionalContentItem = styled.div`
   background-color: #7f4efb;
   color: white;
   border: 2px solid white;
-  padding: 1vh;
+  padding: 2vh;
 
   &:nth-of-type(2) {
     animation-delay: 0.15s;
@@ -99,15 +105,18 @@ export const AdditionalContentItem = styled.div`
 `;
 
 export const AdditionalContentTitle = styled.div`
-  font-size: 2.2vh;
+  font-size: 2vh;
   font-weight: 600;
+  padding-bottom: 1vh;
 `;
 
 export const AdditionalContentText = styled.div`
   font-size: 2vh;
-  line-height: 2.5vh;
+  line-height: normal;
+  color: white;
 `;
 
 export const UL = styled.ul`
   font-size: 2vh;
+  list-style-type: disc;
 `;

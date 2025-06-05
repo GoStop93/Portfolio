@@ -42,10 +42,10 @@ export const Page = styled.div`
 
 export const HeroImage = styled.img`
   position: absolute;
-  width: 25vw;
+  width: 18vw;
   top: 0;
   left: 0;
-  animation: moveFromLeft 7s linear infinite,  rotate360 10s linear infinite;
+  animation: moveFromLeft 7s linear infinite, rotate360 10s linear infinite;
 `;
 
 export const Label = styled.div`

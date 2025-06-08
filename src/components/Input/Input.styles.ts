@@ -26,6 +26,9 @@ export const Input = styled.input`
     -webkit-text-fill-color: #949fbe;
     box-shadow: 0 0 0px 1000px #161a2c inset;
   }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const TextArea = styled.textarea`
@@ -49,10 +52,9 @@ export const TextArea = styled.textarea`
     -webkit-text-fill-color: #949fbe;
     box-shadow: 0 0 0px 1000px #161a2c inset;
   }
-
-  /* &::-webkit-scrollbar {
-    display: none; */
-  /* } */
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Label = styled.label`

@@ -19,7 +19,7 @@ const Resume = () => {
     link.click();
   };
   return (
-    <>
+    <S.Content>
       <S.ResumeTopWrapper onClick={handleOpenClick}>
         <S.OpenIcon src={openIcon} />
         <S.OpenText>
@@ -56,8 +56,8 @@ const Resume = () => {
           <span>e</span>
         </S.DownloadText>
       </S.ResumeBottomWrapper>
-      <S.ResumeImage src={ResumeImage} />
-    </>
+      <S.ResumeImage src={ResumeImage} onClick={handleOpenClick} />
+    </S.Content>
   );
 };
 

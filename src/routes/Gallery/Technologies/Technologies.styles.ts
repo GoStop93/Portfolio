@@ -15,6 +15,9 @@ export const Content = styled.div`
   width: 80vw;
   flex-wrap: wrap;
   border-inline: 1px solid #5733a8;
+  @media (max-width: 768px) {
+    width: 90vw;
+  }
 `;
 
 export const H3 = styled.h3`

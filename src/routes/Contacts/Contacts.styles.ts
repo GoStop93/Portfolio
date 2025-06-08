@@ -6,6 +6,9 @@ export const Contacts = styled.div`
   height: 100vh;
   background-color: black;
   overflow: hidden;
+  @media (max-width: 768px) {
+    height: auto;
+  }
 `;
 
 export const Content = styled.div`
@@ -13,6 +16,12 @@ export const Content = styled.div`
   width: 100%;
   height: 100vh;
   padding: 15vh;
+  @media (max-width: 768px) {
+    box-sizing: border-box;
+    flex-direction: column;
+    height: auto;
+    padding: 20vw 5vw;
+  }
 `;
 
 export const BackButton = styled.button`
@@ -34,6 +43,9 @@ display: flex;
   font-size: 1vw;
   margin-top: 3px;
   color: #fafafa;
+  @media (max-width: 768px) {
+    font-size: 5vw;
+  }
 `;
 
 export const BackButtonImage = styled.img`
@@ -43,5 +55,8 @@ export const BackButtonImage = styled.img`
   transform: rotate(-90deg);
   ${BackButton}:hover & {
     transform: rotate(-90deg) translateY(-1vh);
+  }
+  @media (max-width: 768px) {
+    width: 5vw;
   }
 `;

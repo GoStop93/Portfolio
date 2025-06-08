@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import * as S from './Contacts.styles';
@@ -17,6 +17,7 @@ import { getSetActivePage } from '../Gallery/store/selectors';
 import { ACTIVE_PAGE_NAME } from '../Gallery/store/types';
 
 const Contacts: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
 
   const changeActivePage = usePages(getSetActivePage);
@@ -27,6 +28,14 @@ const Contacts: React.FC = () => {
 
   useEffect(() => {
     changeActivePage(ACTIVE_PAGE_NAME.Projects);
+  }, []);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   return (
@@ -40,7 +49,7 @@ const Contacts: React.FC = () => {
           <S.BackButtonImage src={BackIcon} />
           <S.BackButtonText>Go back</S.BackButtonText>
         </S.BackButton>
-        <Particles />
+        {!isMobile && <Particles />}
         <S.Content>
           <Resume />
           <FeedbackForm />

@@ -33,6 +33,10 @@ export const ExpandedListItemWrapper = styled.div`
     border-radius: 6px;
     background-color: rgb(157, 78, 251);
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const ExpandedListItemContent = styled.div`
@@ -72,6 +76,10 @@ export const DescriptionItem = styled.div`
 
   & + & {
     margin-top: 1.5vh;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2vh;
   }
 `;
 

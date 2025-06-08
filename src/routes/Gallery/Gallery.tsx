@@ -20,6 +20,15 @@ const Gallery = () => {
   const [experienceYears, setExperienceYears] = useState(0);
   const [experienceMonths, setExperienceMonths] = useState(0);
   const [isExperienceVisible, setExperienceVisible] = useState(false);
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+
+useEffect(() => {
+  const updateHeight = () => setViewportHeight(window.innerHeight);
+  updateHeight();
+  window.addEventListener('resize', updateHeight);
+  return () => window.removeEventListener('resize', updateHeight);
+}, []);
+
 
   let navigate = useNavigate();
 
@@ -111,7 +120,7 @@ const Gallery = () => {
         <title>Litvinov Mikhail</title>
         <link rel="icon" href="ML.ico" />
       </Helmet>
-      <S.Wrapper>
+      <S.Wrapper height={viewportHeight}>
         <S.Container>
           <S.Gallery>
             <Frame>

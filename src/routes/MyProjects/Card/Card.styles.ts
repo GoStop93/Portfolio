@@ -9,6 +9,9 @@ export const Container = styled.div<{ cursor: string}>`
   width: 630px;
   height: 300px;
   cursor: ${(props) => props.cursor};
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
 `;
 
 export const Content = styled(motion.div)<{ imageHeight: number; imageWidth: number }>`
@@ -19,6 +22,9 @@ export const Content = styled(motion.div)<{ imageHeight: number; imageWidth: num
   transform-style: preserve-3d;
   perspective: 800px;
   backface-visibility: hidden;
+  @media (max-width: 768px) {
+    perspective: 100px;
+  }
 `;
 
 export const Shadow = styled.div`

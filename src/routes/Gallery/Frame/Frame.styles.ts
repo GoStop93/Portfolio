@@ -17,4 +17,9 @@ export const Frame = styled.div`
   &:nth-child(4) {
     background-color: rgb(0 0 0 / 1);
   }
+  @media (max-width: 768px) {
+    &:nth-child(n) {
+      background-color: rgb(0 0 0 / 1);
+    }
+  }
 `;

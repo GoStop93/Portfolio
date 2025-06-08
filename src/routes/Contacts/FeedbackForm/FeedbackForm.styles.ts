@@ -33,6 +33,12 @@ export const FormWrapper = styled.div`
   top: 5vh;
   right: 36vh;
   z-index: 10;
+  @media (max-width: 768px) {
+    position: relative;
+    display: block;
+    right: 0;
+    width: 100%;
+  }
 `;
 
 export const Form = styled(FormikForm)`

@@ -11,4 +11,8 @@ export const ProjectDescription = styled.p<{ type: 'vertical' | 'horizontal'}>`
   color: #bdbdbd;
   width: ${(props) => props.type === 'horizontal' ? '750px': '650px'};
   text-align: center;
+  @media (max-width: 768px) {
+    width: 100vw;
+    font-size: 4vw;
+  }
 `;

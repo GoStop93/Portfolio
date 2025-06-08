@@ -5,6 +5,9 @@ export const Header = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2vh;
+  @media (max-width: 768px) {
+    gap: 2vh;
+  }
 `;
 
 export const Label = styled.div`
@@ -20,10 +23,17 @@ export const Text = styled.div`
   background-color: rgba(51, 51, 51, 0.5);
   border-radius: 1vh;
   border: 1px solid #fff;
+  @media (max-width: 768px) {
+    font-size: 5vw;
+    padding: 2vh;
+  }
 `;
 
 export const Icon = styled.img`
   height: 2vw;
+  @media (max-width: 768px) {
+    height: 15vw;
+  }
 `;
 
 export const Technology = styled.div`
@@ -39,4 +49,10 @@ export const Technology = styled.div`
   border-radius: 2vh;
   padding: 1vw;
   gap: 1vw;
+  @media (max-width: 768px) {
+    height: 40vh;
+    width: 80vw;
+    gap: 4vw;
+    padding: 4vw;
+  }
 `;

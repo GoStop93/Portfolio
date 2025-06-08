@@ -10,16 +10,17 @@ export const Card = ({ project }: ICardProps) => {
 
   const [hover, setHover] = useState(false);
   const [tapped, setTapped] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   let height: number;
   let width: number;
 
   if(type === 'horizontal') {
-     height = 300;
-     width = 630;
+     height = isMobile ? 170 : 300;
+     width = isMobile ? 360 : 630;
   } else {
-     height = 500;
-     width = 395;
+     height = isMobile ? 350 : 500;
+     width = isMobile ? 280 : 395;
   }
 
   const centerPoint = [width / 2, height / 2];
@@ -81,6 +82,14 @@ export const Card = ({ project }: ICardProps) => {
       xy.set(centerPoint);
     }
   }, [hover, xy, centerPoint]);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <S.Container style={{ height: `${height}px`, width: `${width}px` }} cursor={cursor}>

@@ -22,6 +22,7 @@ import { ACTIVE_PAGE_NAME } from '../Gallery/store/types';
 
 const MyProjects = () => {
   const [offset, setOffset] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const navigate = useNavigate();
 
@@ -40,6 +41,14 @@ const MyProjects = () => {
   useLenis(({ scroll }) => {
     setOffset(scroll);
   });
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -109,7 +118,14 @@ const MyProjects = () => {
             <S.BackButtonImage src={BackIcon} />
             <S.BackButtonText>Go back</S.BackButtonText>
           </S.BackButton>
-          <S.HeroImage src={heros} offset={offset} isPageLoaded={isPageLoaded} />
+          <S.HeroImage
+            src={heros}
+            offset={offset}
+            isPageLoaded={isPageLoaded}
+            width={isMobile ? '110vw' : '120vh'}
+            top={isMobile ? '20vh' : '5vh'}
+            right={isMobile ? '-12vw' : '5vw'}
+          />
           <S.MainTitle>
             {' '}
             <span>Gallery of</span> <span>my</span> <br /> <span>best</span> <span>pet</span> <span>projects</span>

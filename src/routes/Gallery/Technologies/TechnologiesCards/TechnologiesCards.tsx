@@ -6,8 +6,8 @@ import * as S from './TechnologiesCards.styles';
 const TechnologiesCards: React.FC = () => {
   return (
     <S.CardsWrapper>
-      {TechnologiesInformation.map((technology) => (
-        <Technology icon={technology.icon} label={technology.label} description={technology.description}/>
+      {TechnologiesInformation.map((technology, index) => (
+        <Technology key={index} icon={technology.icon} label={technology.label} description={technology.description}/>
       ))}
     </S.CardsWrapper>
   );

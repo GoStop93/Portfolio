@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+export const Content = styled.div`
+  @media (max-width: 768px) {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+  }
+`;
+
 export const OpenIcon = styled.img`
   position: absolute;
   bottom: 6vw;
@@ -63,6 +71,14 @@ export const ResumeImage = styled.img`
   border-radius: 15px;
   transition: all 0.3s;
   z-index: 1;
+  @media (max-width: 768px) {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    transform: none;
+    left: 0;
+  }
 `;
 
 export const ResumeTopWrapper = styled.div`
@@ -127,6 +143,9 @@ export const ResumeTopWrapper = styled.div`
         }
       }
     }
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -204,5 +223,8 @@ export const ResumeBottomWrapper = styled.div`
         }
       }
     }
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `;

@@ -37,8 +37,11 @@ export const ContactsIcon = styled.img`
   height: 4vh;
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ height?: number}>`
   height: calc(1vh * 320);
+  @media (max-width: 768px) {
+    height: ${({ height }) => height && `calc(${height}px * 3.1)`};
+  }
 `;
 
 export const Container = styled.div`
@@ -46,6 +49,9 @@ export const Container = styled.div`
   height: 100%;
   position: fixed;
   perspective: calc(1vh * 110);
+  @media (max-width: 768px) {
+    perspective: calc(1vw * 150);
+  }
 `;
 
 export const Gallery = styled.section`
@@ -67,6 +73,9 @@ export const H2 = styled.h2`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 3s infinite linear;
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
 `;
 
 export const H3 = styled.h3`
@@ -78,6 +87,9 @@ export const H3 = styled.h3`
 
 export const P = styled.p`
   font-size: 3vh;
+  @media (max-width: 768px) {
+    font-size: 2.5vh;
+  }
 `;
 
 export const ImageLeft = styled.img`
@@ -86,6 +98,10 @@ export const ImageLeft = styled.img`
   margin: 10vh 0 0 40vh;
   -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0.1)));
   opacity: 1;
+  @media (max-width: 768px) {
+    width: 25vh;
+    margin: 0;
+  }
 `;
 
 export const ImageRight = styled.img`
@@ -94,6 +110,9 @@ export const ImageRight = styled.img`
   margin: 0vh 70vh 0 0;
   border-radius: 2vh;
   border: 1px solid white;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const Text = styled.div`
@@ -106,11 +125,17 @@ export const Text = styled.div`
 export const TextRight = styled.div`
   width: 95vh;
   margin-left: 100vh;
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
 `;
 
 export const TextLeft = styled.div`
   width: 90vh;
   margin-right: 80vh;
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
 `;
 
 export const Square = styled.div`
@@ -125,4 +150,8 @@ export const Square = styled.div`
   border: 1px solid #fff;
   border-radius: 5px;
   font-weight: 700;
+  @media (max-width: 768px) {
+    width: 1vh;
+    height: 1vh;
+  }
 `;

@@ -2,16 +2,20 @@ import { styled } from 'styled-components';
 
 interface OffsetProps {
   offset: number;
-  isPageLoaded?: boolean
+  isPageLoaded?: boolean;
+  width?: string;
+  top?: string;
+  right?: string;
 }
 
-export const ProjectsPage = styled.div<{isPageLoaded: boolean}>`
+export const ProjectsPage = styled.div<{ isPageLoaded: boolean }>`
   background-color: black;
   font-family: raleway_project;
   color: #fafafa;
   padding: 0 7vh;
   overflow: hidden;
   height: ${(props) => (props.isPageLoaded ? 'auto' : '0px')};
+  position: relative;
 `;
 
 export const ProjectsHeader = styled.div`
@@ -20,10 +24,10 @@ export const ProjectsHeader = styled.div`
 
 export const HeroImage = styled.img.attrs<OffsetProps>((props) => ({
   style: {
-    width: '120vh',
+    width: props.width || '120vh',
     position: 'absolute',
-    right: '5vw',
-    top: '5vh',
+    right: props.right || '5vw',
+    top: props.top || '5vh',
     willChange: 'transform',
     transform: `translate3d(0, ${props.offset / 5}px, 0)`,
     WebkitMaskImage: `-webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0.1)))`,
@@ -68,6 +72,10 @@ export const MainTitle = styled.h1`
       }
     }
   }
+  @media (max-width: 768px) {
+    top: 50vh;
+    font-size: 10vw;
+  }
 `;
 
 export const Gallery = styled.main`
@@ -79,6 +87,12 @@ export const Gallery = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 0;
+    gap: 10vh;
   }
 `;
 
@@ -93,6 +107,9 @@ export const GalleryLeftContent = styled.div.attrs<OffsetProps>((props) => ({
 export const GalleryRightContent = styled.div`
   margin-top: 65vh;
   gap: 30vh;
+  @media (max-width: 768px) {
+    gap: 10vh;
+  }
 `;
 
 export const TextBlock = styled.div`
@@ -100,6 +117,9 @@ export const TextBlock = styled.div`
   margin-top: 20vh;
   max-width: 40vw;
   font-size: 4vw;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const BackButton = styled.button`
@@ -118,6 +138,9 @@ export const BackButtonText = styled.div`
   font-size: 1.2vw;
   margin-top: 3px;
   color: #fafafa;
+  @media (max-width: 768px) {
+    font-size: 5vw;
+  }
 `;
 
 export const BackButtonImage = styled.img`
@@ -127,5 +150,9 @@ export const BackButtonImage = styled.img`
   transform: rotate(-90deg);
   ${BackButton}:hover & {
     transform: rotate(-90deg) translateY(-1vh);
+  }
+  @media (max-width: 768px) {
+    width: 5vw;
+    margin-left: -10vw;
   }
 `;

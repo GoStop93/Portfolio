@@ -8,10 +8,19 @@ import { IExperienceProps } from './type';
 
 export const Experience = ({ isExperienceVisible }: IExperienceProps) => {
   const [focused, setFocused] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleOpen = (index: number) => {
     setFocused((prev: number | null) => (prev === index ? null : index));
   };
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     if (isExperienceVisible) {
@@ -36,28 +45,44 @@ export const Experience = ({ isExperienceVisible }: IExperienceProps) => {
         decisionData={focused}
       >
         <S.ListWrapper>
-          <S.List>
-            {listData1.map((item, index) => (
-              <S.Item key={item.id}>
-                {item.id === focused ? (
-                  <ExpandedListItem index={focused} onClick={handleOpen} image={item.image} text={item.text} info={item.info} />
-                ) : (
-                  <ListItem index={item.id} onClick={handleOpen} image={item.image} text={item.text} />
-                )}
-              </S.Item>
-            ))}
-          </S.List>
-          <S.List>
-            {listData2.map((item, index) => (
-              <S.Item key={item.id}>
-                {item.id === focused ? (
-                  <ExpandedListItem index={focused} onClick={handleOpen} image={item.image} text={item.text} info={item.info} />
-                ) : (
-                  <ListItem index={item.id} onClick={handleOpen} image={item.image} text={item.text} />
-                )}
-              </S.Item>
-            ))}
-          </S.List>
+          {isMobile ? (
+            <S.List>
+              {ExperienceData.map((item, index) => (
+                <S.Item key={item.id}>
+                  {item.id === focused ? (
+                    <ExpandedListItem index={focused} onClick={handleOpen} image={item.image} text={item.text} info={item.info} />
+                  ) : (
+                    <ListItem index={item.id} onClick={handleOpen} image={item.image} text={item.text} />
+                  )}
+                </S.Item>
+              ))}
+            </S.List>
+          ) : (
+            <>
+              <S.List>
+                {listData1.map((item, index) => (
+                  <S.Item key={item.id}>
+                    {item.id === focused ? (
+                      <ExpandedListItem index={focused} onClick={handleOpen} image={item.image} text={item.text} info={item.info} />
+                    ) : (
+                      <ListItem index={item.id} onClick={handleOpen} image={item.image} text={item.text} />
+                    )}
+                  </S.Item>
+                ))}
+              </S.List>
+              <S.List>
+                {listData2.map((item, index) => (
+                  <S.Item key={item.id}>
+                    {item.id === focused ? (
+                      <ExpandedListItem index={focused} onClick={handleOpen} image={item.image} text={item.text} info={item.info} />
+                    ) : (
+                      <ListItem index={item.id} onClick={handleOpen} image={item.image} text={item.text} />
+                    )}
+                  </S.Item>
+                ))}
+              </S.List>
+            </>
+          )}
         </S.ListWrapper>
       </Flipper>
     </S.Experience>

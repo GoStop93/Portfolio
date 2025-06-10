@@ -40,7 +40,7 @@ export const MainTitle = styled.h1`
   margin: 0;
   position: absolute;
   width: 60vw;
-  bottom: 15vh;
+  top: 55vh;
   line-height: 1.2;
   left: 5vw;
   font-family: outfit_c;
